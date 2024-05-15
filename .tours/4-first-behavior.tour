@@ -1,0 +1,35 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "4. First Behaviour",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 31,
+          "character": 1
+        },
+        "end": {
+          "line": 35,
+          "character": 4
+        }
+      },
+      "description": "Add this function, it will generate new random word and set to `current`.\r\nThen, it will notify the listeners."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 51,
+          "character": 1
+        },
+        "end": {
+          "line": 52,
+          "character": 1
+        }
+      },
+      "description": "Change print and call to the previous function.\r\nSave and try the app now. It should generate a new random word pair every time you press the **Next** button."
+    }
+  ],
+  "ref": "931c7ada101b1da7c2897f58f971be261c95b047"
+}
