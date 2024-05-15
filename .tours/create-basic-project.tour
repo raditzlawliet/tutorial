@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "Create Basic Project",
+  "title": "2. Create Basic Project",
   "steps": [
     {
       "file": "pubspec.yaml",

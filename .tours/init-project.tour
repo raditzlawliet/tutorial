@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "Init Project",
+  "title": "1. Init Project",
   "steps": [
     {
       "file": "lib/main.dart",
