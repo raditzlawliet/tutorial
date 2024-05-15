@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Init Project",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "description": "Your first hot reload!",
+      "line": 109
+    }
+  ]
+}
