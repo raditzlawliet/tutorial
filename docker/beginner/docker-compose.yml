@@ -1,0 +1,71 @@
+version: '3.9'
+# compose name
+name: docker-compose-learning
+
+# tell compose to create this all services
+services:
+  # app service section
+  app:
+    container_name: golang_container
+    # set container system environment
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+    # build with given Dockerfile 
+    build:
+      context: ./go_sample_postgres/
+      dockerfile: Dockerfile
+    # environment file
+    env_file:
+      - .env
+    # port to expose <HOST_PORT>:<CONTAINER_PORT>
+    ports:
+      - 8080:8080
+    # restart policy, The policy always restarts the container until its removal
+    # https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart
+    restart: always
+    # container will waiting postgresdb until condition service is healthy (indicate via healthcheck)
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    # container network
+    networks:
+      - learning
+
+  # database service name postgresdb
+  postgresdb:
+    # image to pull and use
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+    env_file:
+      - .env
+    ports:
+      - '5432:5432'
+    # map persistent data stores
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - learning
+    # indicator container is healty
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# Volume for persistent postgres db data
+volumes:
+  pg_data:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  learning:
+    driver: bridge
