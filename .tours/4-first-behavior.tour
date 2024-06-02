@@ -28,7 +28,7 @@
           "character": 1
         }
       },
-      "description": "Change print and call to the previous function.\r\nSave and try the app now. It should generate a new random word pair every time you press the **Next** button."
+      "description": "Change print and call to the previous function.\r\nSave and try the app now. It should generate a new random word pair every time you press the **Next** button.\r\n\r\n>> ./script/vscode-open-commit.sh 931c7ada101b1da7c2897f58f971be261c95b047"
     }
   ],
   "ref": "931c7ada101b1da7c2897f58f971be261c95b047"

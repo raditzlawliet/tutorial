@@ -28,7 +28,7 @@
           "character": 1
         }
       },
-      "description": "Add a `Button`, it will show **Next** `Button`. When pressed it will print to **Debug Console**"
+      "description": "Add a `Button`, it will show **Next** `Button`. When pressed it will print to **Debug Console**.\r\n\r\n>> ./script/vscode-open-commit.sh 2e7ac74f6477339288977bf190806464d1ea61cf"
     }
   ],
   "ref": "2e7ac74f6477339288977bf190806464d1ea61cf"

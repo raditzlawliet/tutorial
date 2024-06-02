@@ -108,7 +108,7 @@
     },
     {
       "file": "lib/main.dart",
-      "description": "This second Text widget takes `appState`, and accesses the only member of that class, current (which is a WordPair). WordPair provides several helpful getters, such as asPascalCase or asSnakeCase. Here, we use asLowerCase but you can change this now if you prefer one of the alternatives.\r\n",
+      "description": "This second Text widget takes `appState`, and accesses the only member of that class, current (which is a WordPair). WordPair provides several helpful getters, such as asPascalCase or asSnakeCase. Here, we use asLowerCase but you can change this now if you prefer one of the alternatives.\r\n\r\n>> ./script/vscode-open-commit.sh 24bb0d09d9e2c56b7a0818be6d32882a52683299",
       "line": 41
     }
   ],
