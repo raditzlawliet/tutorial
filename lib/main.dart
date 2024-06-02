@@ -51,19 +51,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var selectedIndex = 0; // ← Add this property.
+  var selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    Widget page;
+    switch (selectedIndex) {
+      case 0:
+        page = GeneratorPage();
+      case 1:
+        page = Placeholder();
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
+
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
-          // ↓ Replace print with this.
           setState(() {
             selectedIndex = index;
           });
         },
-        selectedIndex: selectedIndex, // ← Change to this.
+        selectedIndex: selectedIndex,
         destinations: [
           NavigationDestination(
               selectedIcon: Icon(Icons.home),
@@ -75,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: "Favorite"),
         ],
       ),
-      body: GeneratorPage(), // extract wiget as GeneratorPage
+      body: Container(child: page),
     );
   }
 }
@@ -87,7 +96,6 @@ class GeneratorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Move anything relate generated word
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
 
