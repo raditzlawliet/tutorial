@@ -4,7 +4,7 @@
   "steps": [
     {
       "file": "lib/main.dart",
-      "description": "Your first hot reload!",
+      "description": "Your first hot reload!\r\n\r\n>> ./script/vscode-open-commit.sh 3b981c9cf0fce40f974dbfd1808c67923ad3885a",
       "line": 109
     }
   ],

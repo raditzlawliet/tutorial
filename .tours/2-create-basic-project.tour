@@ -32,23 +32,59 @@
     },
     {
       "file": "lib/main.dart",
-      "description": "Import our new depedency ",
-      "line": 1
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 3,
+          "character": 41
+        }
+      },
+      "description": "Import our new depedency\r\n\r\n"
     },
     {
       "file": "lib/main.dart",
-      "description": "Create AppState our Application State",
-      "line": 28
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 26,
+          "character": 2
+        }
+      },
+      "description": "Let's remake **MyApp** with more simple.\r\n**MyAppState** will be app state context.\r\n**MyHomePage** will be first app home view. "
     },
     {
       "file": "lib/main.dart",
-      "description": "Generate random word and set to `current` variable.",
-      "line": 29
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 1
+        },
+        "end": {
+          "line": 30,
+          "character": 2
+        }
+      },
+      "description": "Create MyAppState as Application State.\r\nNew variable **current** and set generated random word."
     },
     {
       "file": "lib/main.dart",
-      "description": "Create a Page to show random word",
-      "line": 32
+      "selection": {
+        "start": {
+          "line": 32,
+          "character": 1
+        },
+        "end": {
+          "line": 46,
+          "character": 2
+        }
+      },
+      "description": "App first View or Page, it will show the generated random."
     },
     {
       "file": "lib/main.dart",
