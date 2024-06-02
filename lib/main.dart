@@ -33,7 +33,6 @@ class MyAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  // ↓ Add the code below.
   var favorites = <WordPair>[];
 
   void toggleFavorite() {
@@ -52,7 +51,6 @@ class MyHomePage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
 
-    // ↓ Add this.
     IconData icon;
     if (appState.favorites.contains(pair)) {
       icon = Icons.favorite;
@@ -61,6 +59,21 @@ class MyHomePage extends StatelessWidget {
     }
 
     return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          print("select $index");
+        },
+        destinations: [
+          NavigationDestination(
+              selectedIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined),
+              label: 'Home'),
+          NavigationDestination(
+              selectedIcon: Icon(Icons.favorite),
+              icon: Icon(Icons.favorite_outline),
+              label: "Favorite"),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,9 +81,8 @@ class MyHomePage extends StatelessWidget {
             BigCard(pair: pair),
             SizedBox(height: 10),
             Row(
-              mainAxisSize: MainAxisSize.min, // ← Add this.
+              mainAxisSize: MainAxisSize.min,
               children: [
-                // ↓ And this.
                 ElevatedButton.icon(
                   onPressed: () {
                     appState.toggleFavorite();
