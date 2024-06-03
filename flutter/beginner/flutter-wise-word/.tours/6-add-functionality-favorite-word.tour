@@ -3,7 +3,7 @@
   "title": "6. Add functionality: favorite word",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 35,
@@ -17,7 +17,7 @@
       "description": "### Create functionality `toggleFavorite`.\r\nit will add/remove current generated word into favorites list.\r\n"
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 55,
@@ -31,7 +31,7 @@
       "description": "### Prepare button icon logic\r\nAdd this to prepare button icon, it will show favorite icon and favorite_border icon based on favorites list.. "
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 70,

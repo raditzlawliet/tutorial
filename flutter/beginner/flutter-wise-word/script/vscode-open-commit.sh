@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 COMMIT_HASH=$1
-LOCAL_REPO_PATH="."
+LOCAL_REPO_PATH="../../../."
 TEMP_DIR=$(mktemp -d -t project-$COMMIT_HASH-XXXXXX)
 
 echo $TEMP_DIR

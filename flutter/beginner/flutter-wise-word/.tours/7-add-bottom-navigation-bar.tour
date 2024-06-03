@@ -3,7 +3,7 @@
   "title": "7. Add Bottom Navigation Bar",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 62,

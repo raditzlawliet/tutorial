@@ -3,7 +3,7 @@
   "title": "9. Implement Bottom Navbar functionality",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 58,
@@ -17,7 +17,7 @@
       "description": "### Implement switch page Navbar functionality\r\n\r\nPreviously, we already have `selectedIndex`.\r\nNow we can create logic to show which widget to show when `selectedIndex` changes.\r\n\r\nIndex 0 will show `GeneratorPage` \r\nand index 1 will show a a Placeholder for `FavoritePage` later."
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 87,

@@ -3,7 +3,7 @@
   "title": "5.a. Make app prettier (prepare)",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 39,

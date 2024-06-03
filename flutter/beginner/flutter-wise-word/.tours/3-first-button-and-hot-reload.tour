@@ -3,7 +3,7 @@
   "title": "3. First Button & Hot Reload",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 40,
@@ -17,7 +17,7 @@
       "description": "Run the Flutter App using F5.\r\nChange this text and Save without re-run.\r\nYou will see the app will hot-reload reflect the changes automatically."
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 43,

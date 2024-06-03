@@ -3,7 +3,7 @@
   "title": "5.c. Make app prettier (styling)",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 73,
@@ -17,7 +17,7 @@
       "description": "### Styling BigCard\r\n\r\nin that example, `Theme.of(context)...` and `copyWith` will copy style from `.textTheme.displayMedium` with new color. afterthat, apply to `Text.style`.\r\nOther things, you can also put new color on Card."
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 43,

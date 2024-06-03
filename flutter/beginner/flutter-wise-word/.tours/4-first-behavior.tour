@@ -3,7 +3,7 @@
   "title": "4. First Behaviour",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 31,
@@ -17,7 +17,7 @@
       "description": "### Prepare getNext() random word functionality\r\n\r\nAdd this function, it will generate new random word and set to `current`.\r\nThen, it will notify the listeners."
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 49,

@@ -3,7 +3,7 @@
   "title": "10. Implement favorite page and add to bottom navbar",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 1,
@@ -17,7 +17,7 @@
       "description": "## Create Favorite Page\r\n\r\ncreate a new Widget to hold Favorite Page.\r\n1. use shortcut, type `stl` then (Ctrl + Space) and select \"Flutter Stateless Widget\". It will create new Widget.\r\n2. Rename widget into `FavoritesPage`.\r\n\r\nNow add some basic widget to show `appState.favorites` contents.\r\n\r\nIn that code it:\r\n1. It gets the current state of the app.\r\n2. it shows a (scrollable) list.\r\n3. The list starts with a summary (for example, You have 5 favorites words.).\r\n4. The code then iterates through all the favorites, and constructs a ListTile widget for each one.\r\n"
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 63,

@@ -3,7 +3,7 @@
   "title": "5.b. Make app prettier (extract widget)",
   "steps": [
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 48,
@@ -17,7 +17,7 @@
       "description": "### Extract Widget Text into BigCard\r\n1. set cursor on **Text**, \r\n2. Press (Ctrl + .) \r\n3. and select \"Extract Widget\".\r\n4. Input new widget name **BigCard**. \r\n\r\nBy doing so, it will automically help you refactor Text Widget into BigCard Widget. "
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 61,
@@ -31,7 +31,7 @@
       "description": "### BigCard widget\r\n\r\nAfter you doing extract widget, this BigCard is automatically created.\r\nYou can also do this manual with more effort.\r\n\r\nNow previous Text Widget already separate into BigCard Widget.\r\n "
     },
     {
-      "file": "lib/main.dart",
+      "file": "../../../lib/main.dart",
       "selection": {
         "start": {
           "line": 71,
