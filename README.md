@@ -1,16 +1,46 @@
-# flutter_favorite_words
+# Tutorial - Flutter Wise Word
 
-A new Flutter project.
+a Generator Wise Word with flutter for mobile with Codetour for tutorial purpose.
 
-## Getting Started
+<p align="center">
+    <img src="docs/overview.png">
+    <img src="docs/result.png" height="350px">
+</p>
 
-This project is a starting point for a Flutter application.
+## What's covered
 
-A few resources to get you started if this is your first Flutter project:
+- The basics of how Flutter works
+- Creating layouts in Flutter
+- Connecting user interactions (like button presses) to app behavior
+- Keeping your Flutter code organized
+- Switching page with Navigation Bar
+- Achieving a consistent look & feel of your app
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Not mentioned
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Reference Material from: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
+  - Using Navigation Bar instead Navigation Rail
+- Target: Mobile
+- Including Code Tour
+  - Each topic has spesific commit
+  - Script to automatically reclone with spesific commit, see on [vscode-open-commit.sh](./script/vscode-open-commit.sh)
+
+## How to use
+
+- Clone repository
+- Open with VSCode, Flutter SDK and Mobile (Android or iOS) SDK
+- Enable Flutter and Dart VSCode extension
+- Enable Codetour VSCode extension (https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
+- Follow Codetour topic and step, each topic has script to automatically reclone with spesific commit.
+
+## Support
+
+If you have any questions or encounter any issues, feel free to open an issue and we will assist you in resolving them.
+
+## Contribute
+
+Feel free to contribute, don't forget to mention if needed
+
+## Author and Contributor
+
+- [@raditzlawliet](https://github.com/raditzlawliet/)
