@@ -1,0 +1,35 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "9. Implement Bottom Navbar functionality",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 58,
+          "character": 1
+        },
+        "end": {
+          "line": 66,
+          "character": 6
+        }
+      },
+      "description": "### Implement switch page Navbar functionality\r\n\r\nPreviously, we already have `selectedIndex`.\r\nNow we can create logic to show which widget to show when `selectedIndex` changes.\r\n\r\nIndex 0 will show `GeneratorPage` \r\nand index 1 will show a a Placeholder for `FavoritePage` later."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 87,
+          "character": 1
+        },
+        "end": {
+          "line": 88,
+          "character": 1
+        }
+      },
+      "description": "### Update Widget to show selected widget.\r\n\r\n`page` will hold current selectedIndex widget, now we can put in `Scaffold.body` in **Container** widget `Container(child: page)`.\r\n\r\nCongrats! the Navigation Bar already working now\r\n.\r\n>> ./script/vscode-open-commit.sh 03f41f910f90a553164be0f3d5922a8d86f64b65"
+    }
+  ],
+  "ref": "03f41f910f90a553164be0f3d5922a8d86f64b65"
+}

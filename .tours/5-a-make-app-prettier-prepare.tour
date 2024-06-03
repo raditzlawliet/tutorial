@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5.a. Make app prettier (prepare)",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 39,
+          "character": 1
+        },
+        "end": {
+          "line": 59,
+          "character": 1
+        }
+      },
+      "description": "clean up and move render generated word variable to MyHomePage. This is for separation widget later.\r\n\r\n>> ./script/vscode-open-commit.sh 99be6e5a163dca253d857148c2c6ed9a1bd67b95"
+    }
+  ],
+  "ref": "99be6e5a163dca253d857148c2c6ed9a1bd67b95"
+}

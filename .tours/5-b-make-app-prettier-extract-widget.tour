@@ -1,0 +1,49 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5.b. Make app prettier (extract widget)",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 48,
+          "character": 1
+        },
+        "end": {
+          "line": 49,
+          "character": 1
+        }
+      },
+      "description": "### Extract Widget Text into BigCard\r\n1. set cursor on **Text**, \r\n2. Press (Ctrl + .) \r\n3. and select \"Extract Widget\".\r\n4. Input new widget name **BigCard**. \r\n\r\nBy doing so, it will automically help you refactor Text Widget into BigCard Widget. "
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 61,
+          "character": 1
+        },
+        "end": {
+          "line": 78,
+          "character": 2
+        }
+      },
+      "description": "### BigCard widget\r\n\r\nAfter you doing extract widget, this BigCard is automatically created.\r\nYou can also do this manual with more effort.\r\n\r\nNow previous Text Widget already separate into BigCard Widget.\r\n "
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 71,
+          "character": 1
+        },
+        "end": {
+          "line": 77,
+          "character": 1
+        }
+      },
+      "description": "### Wrap with Padding and Card widget\r\n\r\nNow we can wrap Text with Padding and Card. \r\nThis also can use some trick:\r\n1. Select **Text**\r\n2. Press (Ctrl + .) or (Right Click and select \"Refactor\")\r\n3. Select \"Wrap with Padding\" -> Then it will wrap **Text** with **Padding()**.\r\n\r\nFor Card:\r\n1. Select or Move cursor into **Padding**\r\n2. Press (Ctrl + .) or (Right Click and select \"Refactor\")\r\n3. Select \"Wrap with wiget...\" -> It will wrap with **widget()** and change it with \"Container\".\r\n\r\n>> ./script/vscode-open-commit.sh 9eadce9bec149cf9b3783c704d3fec1b4ca51bb5"
+    }
+  ],
+  "ref": "9eadce9bec149cf9b3783c704d3fec1b4ca51bb5"
+}

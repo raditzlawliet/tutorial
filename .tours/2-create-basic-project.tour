@@ -14,7 +14,7 @@
           "character": 19
         }
       },
-      "description": "add new depedencies"
+      "description": "## Add new depedencies"
     },
     {
       "file": "analysis_options.yaml",
@@ -28,7 +28,7 @@
           "character": 1
         }
       },
-      "description": "set linter to make our code easy to read (you can tune more yourself)"
+      "description": "## Add linter rule\r\n\r\nset linter to make our code easy to read (you can tune more yourself)"
     },
     {
       "file": "lib/main.dart",
@@ -42,7 +42,7 @@
           "character": 41
         }
       },
-      "description": "Import our new depedency\r\n\r\n"
+      "description": "### Import our new depedency\r\n\r\n"
     },
     {
       "file": "lib/main.dart",
@@ -56,7 +56,7 @@
           "character": 2
         }
       },
-      "description": "Let's remake **MyApp** with more simple.\r\n**MyAppState** will be app state context.\r\n**MyHomePage** will be first app home view. "
+      "description": "### Recreate New MyApp\r\n\r\nLet's remake **MyApp** with more simple.\r\n\r\n**MyAppState** will be app state context.\r\n\r\n**MyHomePage** will be first app home view. "
     },
     {
       "file": "lib/main.dart",
@@ -70,7 +70,7 @@
           "character": 2
         }
       },
-      "description": "Create MyAppState as Application State.\r\nNew variable **current** and set generated random word."
+      "description": "## Prepare generated random word\r\n\r\nCreate MyAppState as Application State.\r\n\r\nNew variable **current** and set generated random word."
     },
     {
       "file": "lib/main.dart",
@@ -84,7 +84,7 @@
           "character": 2
         }
       },
-      "description": "App first View or Page, it will show the generated random."
+      "description": "## First View Widget\r\n\r\nApp first View or Page, it will show the generated random.\r\n"
     },
     {
       "file": "lib/main.dart",
@@ -98,17 +98,17 @@
     },
     {
       "file": "lib/main.dart",
-      "description": "Every `build` method must return a widget or (more typically) a nested tree of widgets. In this case, the top-level widget is `Scaffold`. You aren't going to work with `Scaffold` in this codelab, but it's a helpful widget and is found in the vast majority of real-world Flutter apps.\r\n",
+      "description": "Every `build` method must return a widget or (more typically) a nested tree of widgets. \r\n\r\nIn this case, the top-level widget is `Scaffold`. \r\n\r\nYou aren't going to work with `Scaffold` in this codelab, but it's a helpful widget and is found in the vast majority of real-world Flutter apps.\r\n",
       "line": 37
     },
     {
       "file": "lib/main.dart",
-      "description": "`Column` is one of the most basic layout widgets in Flutter. It takes any number of children and puts them in a column from top to bottom. By default, the column visually places its children at the top. You'll soon change this so that the column is centered.\r\n",
+      "description": "### Column\r\n\r\n`Column` is one of the most basic layout widgets in Flutter. \r\n\r\nIt takes any number of children and puts them in a column from top to bottom. \r\n\r\nBy default, the column visually places its children at the top. \r\n\r\nYou'll soon change this so that the column is centered.\r\n",
       "line": 38
     },
     {
       "file": "lib/main.dart",
-      "description": "This second Text widget takes `appState`, and accesses the only member of that class, current (which is a WordPair). WordPair provides several helpful getters, such as asPascalCase or asSnakeCase. Here, we use asLowerCase but you can change this now if you prefer one of the alternatives.\r\n\r\n>> ./script/vscode-open-commit.sh 24bb0d09d9e2c56b7a0818be6d32882a52683299",
+      "description": "### Display generated word with Text widget\r\n\r\nThis second Text widget takes `appState`, and accesses the only member of that class, current (which is a WordPair). WordPair provides several helpful getters, such as asPascalCase or asSnakeCase. Here, we use asLowerCase but you can change this now if you prefer one of the alternatives.\r\n\r\n>> ./script/vscode-open-commit.sh 24bb0d09d9e2c56b7a0818be6d32882a52683299",
       "line": 41
     }
   ],

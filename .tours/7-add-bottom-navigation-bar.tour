@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "7. Add Bottom Navigation Bar",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 62,
+          "character": 1
+        },
+        "end": {
+          "line": 77,
+          "character": 1
+        }
+      },
+      "description": "### Add Bottom Navigation Bar\r\n\r\nby default Scaffold on Material Design already have slot, and now we only put into it to implement.\r\n1. Add `NavigationBar` on `Scaffold.bottomNavigationBar`\r\n2. `onDestinationSelected` will be called everytime user press different tab\r\n3. `destination` similar with childs, it contains `NavigationDestination` items.\r\n4. Put **Home** and **Favorite** into `destination`.\r\n\r\nScaffold (Basic Material Design Widget): https://api.flutter.dev/flutter/material/Scaffold-class.html\r\nNavigationBar: https://api.flutter.dev/flutter/material/NavigationBar-class.html\r\n\r\n>> ./script/vscode-open-commit.sh 24d620a7daf517e69ba683012c41916cf0689f83"
+    }
+  ],
+  "ref": "24d620a7daf517e69ba683012c41916cf0689f83"
+}
