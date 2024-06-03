@@ -1,0 +1,35 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5.c. Make app prettier (styling)",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 73,
+          "character": 1
+        },
+        "end": {
+          "line": 93,
+          "character": 1
+        }
+      },
+      "description": "### Styling BigCard\r\n\r\nin that example, `Theme.of(context)...` and `copyWith` will copy style from `.textTheme.displayMedium` with new color. afterthat, apply to `Text.style`.\r\nOther things, you can also put new color on Card."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 43,
+          "character": 5
+        },
+        "end": {
+          "line": 60,
+          "character": 7
+        }
+      },
+      "description": "## Centering widgets\r\n\r\nTo make it Center the screen.\r\n1. Do wrap `Column` with `Center`\r\n2. Set `mainAxisAlignment` into `center`\r\n\r\nFor more information about Aligning widgets `mainAxisAlignment` & `crossAxisAlignment` see: https://docs.flutter.dev/ui/layout#aligning-widgets\r\n\r\n>> ./script/vscode-open-commit.sh 0d4983f0d0158f97e7eaafb79df57ee9565657a9"
+    }
+  ],
+  "ref": "0d4983f0d0158f97e7eaafb79df57ee9565657a9"
+}

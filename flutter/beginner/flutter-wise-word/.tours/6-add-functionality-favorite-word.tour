@@ -1,0 +1,49 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "6. Add functionality: favorite word",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 35,
+          "character": 1
+        },
+        "end": {
+          "line": 48,
+          "character": 1
+        }
+      },
+      "description": "### Create functionality `toggleFavorite`.\r\nit will add/remove current generated word into favorites list.\r\n"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 55,
+          "character": 1
+        },
+        "end": {
+          "line": 62,
+          "character": 1
+        }
+      },
+      "description": "### Prepare button icon logic\r\nAdd this to prepare button icon, it will show favorite icon and favorite_border icon based on favorites list.. "
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 70,
+          "character": 1
+        },
+        "end": {
+          "line": 90,
+          "character": 1
+        }
+      },
+      "description": "### Add Favorite Button\r\n\r\n1. Wrap **Next Button** with `Row` widget. (https://www.youtube.com/watch?v=_G0mTrAAnrI)\r\n2. Add new Favorite Button and implement `onPressed` to call `toggleFavorite()`. \r\n3. lastly, add some space with `SizedBox`.\r\n\r\n>> ./script/vscode-open-commit.sh 37c58e6d44bf064071ad1ad1482f760ef1ce696b"
+    }
+  ],
+  "ref": "37c58e6d44bf064071ad1ad1482f760ef1ce696b"
+}

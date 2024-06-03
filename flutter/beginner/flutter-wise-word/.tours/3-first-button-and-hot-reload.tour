@@ -1,0 +1,35 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. First Button & Hot Reload",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 40,
+          "character": 1
+        },
+        "end": {
+          "line": 41,
+          "character": 42
+        }
+      },
+      "description": "Run the Flutter App using F5.\r\nChange this text and Save without re-run.\r\nYou will see the app will hot-reload reflect the changes automatically."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 43,
+          "character": 1
+        },
+        "end": {
+          "line": 49,
+          "character": 1
+        }
+      },
+      "description": "## Add a Button\r\n\r\nAdd a `Button`, it will show **Next** `Button`. When pressed it will print to **Debug Console**.\r\n\r\n>> ./script/vscode-open-commit.sh 2e7ac74f6477339288977bf190806464d1ea61cf"
+    }
+  ],
+  "ref": "2e7ac74f6477339288977bf190806464d1ea61cf"
+}

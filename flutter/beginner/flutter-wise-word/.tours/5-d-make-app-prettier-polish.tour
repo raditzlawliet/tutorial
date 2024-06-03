@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5.d. Make app prettier (polish)",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 49,
+          "character": 1
+        },
+        "end": {
+          "line": 50,
+          "character": 1
+        }
+      },
+      "description": "### Polish Home Page\r\n\r\nRemove old `Text` widget and put space between `Card` and `Button` with `SizedBox` widget\r\n\r\n>> ./script/vscode-open-commit.sh bd6accb7a889289c2a642c811679ecee5a442b4f"
+    }
+  ],
+  "ref": "bd6accb7a889289c2a642c811679ecee5a442b4f"
+}

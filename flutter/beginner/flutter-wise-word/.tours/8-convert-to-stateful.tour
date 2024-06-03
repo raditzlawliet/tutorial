@@ -1,0 +1,63 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "8. Convert to Stateful",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 83,
+          "character": 1
+        },
+        "end": {
+          "line": 131,
+          "character": 1
+        }
+      },
+      "description": "## Extract to page `GeneratorPage`\r\n\r\n1. Extract our generator word page into a widget `GeneratorPage`. You may extract from `Center` "
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 48,
+          "character": 1
+        },
+        "end": {
+          "line": 82,
+          "character": 1
+        }
+      },
+      "description": "### Convert Stateless to stateful widgets\r\nUntil now, MyAppState covered all your state needs. That's why all the widgets you have written so far are stateless. They don't contain any mutable state of their own. None of the widgets can change itself—they must go through MyAppState.\r\n\r\nThis is about to change.\r\n\r\nYou need some way to hold the value of the navigation rail's selectedIndex. You also want to be able to change this value from within the onDestinationSelected callback.\r\n\r\nYou could add selectedIndex as yet another property of MyAppState. And it would work. But you can imagine that the app state would quickly grow beyond reason if every widget stored its values in it.\r\n\r\nStep: \r\n1. Convert `MyHomePage` from Stateless widget to Stateful widget. (https://www.youtube.com/watch?v=Cl0RQJXxNPY)\r\n  - (Ctrl + .) or (Right Click + Refactor) and select `Convert to Stateful widget`\r\n\r\nThe underscore (_) at the start of _MyHomePageState makes that class private and is enforced by the compiler. If you want to know more about privacy in Dart, and other topics, read the [Language Tour](https://dart.dev/language/libraries)."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 54,
+          "character": 1
+        },
+        "end": {
+          "line": 55,
+          "character": 1
+        }
+      },
+      "description": "### Add selectedIndex\r\n\r\nthis variable wild hold which index destination or tab selected."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 1
+        },
+        "end": {
+          "line": 7,
+          "character": 75
+        }
+      },
+      "description": "## Implement selectedIndex\r\n\r\n1. add onDestinationSelected with `setState((){})`, it will call update state whenever user tap the nav bar.\r\n2. `selectedIndex = index` will update current index with selected index from user action. \r\n3. lastly add `NavigationBar.selectedIndex` for nav bar to know which is current index.\r\n\r\n>> ./script/vscode-open-commit.sh c32631ee1627711b76d9486d7427e53367dac4e3"
+    }
+  ],
+  "ref": "c32631ee1627711b76d9486d7427e53367dac4e3"
+}

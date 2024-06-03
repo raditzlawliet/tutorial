@@ -1,0 +1,116 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Create Basic Project",
+  "steps": [
+    {
+      "file": "pubspec.yaml",
+      "selection": {
+        "start": {
+          "line": 38,
+          "character": 1
+        },
+        "end": {
+          "line": 39,
+          "character": 19
+        }
+      },
+      "description": "## Add new depedencies"
+    },
+    {
+      "file": "analysis_options.yaml",
+      "selection": {
+        "start": {
+          "line": 24,
+          "character": 1
+        },
+        "end": {
+          "line": 31,
+          "character": 1
+        }
+      },
+      "description": "## Add linter rule\r\n\r\nset linter to make our code easy to read (you can tune more yourself)"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 3,
+          "character": 41
+        }
+      },
+      "description": "### Import our new depedency\r\n\r\n"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 26,
+          "character": 2
+        }
+      },
+      "description": "### Recreate New MyApp\r\n\r\nLet's remake **MyApp** with more simple.\r\n\r\n**MyAppState** will be app state context.\r\n\r\n**MyHomePage** will be first app home view. "
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 1
+        },
+        "end": {
+          "line": 30,
+          "character": 2
+        }
+      },
+      "description": "## Prepare generated random word\r\n\r\nCreate MyAppState as Application State.\r\n\r\nNew variable **current** and set generated random word."
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 32,
+          "character": 1
+        },
+        "end": {
+          "line": 46,
+          "character": 2
+        }
+      },
+      "description": "## First View Widget\r\n\r\nApp first View or Page, it will show the generated random.\r\n"
+    },
+    {
+      "file": "lib/main.dart",
+      "description": "Every widget defines a `build()` method that's automatically called every time the widget's circumstances change so that the widget is always up to date.\r\n",
+      "line": 34
+    },
+    {
+      "file": "lib/main.dart",
+      "description": "`MyHomePage` tracks changes to the app's current state using the watch method",
+      "line": 35
+    },
+    {
+      "file": "lib/main.dart",
+      "description": "Every `build` method must return a widget or (more typically) a nested tree of widgets. \r\n\r\nIn this case, the top-level widget is `Scaffold`. \r\n\r\nYou aren't going to work with `Scaffold` in this codelab, but it's a helpful widget and is found in the vast majority of real-world Flutter apps.\r\n",
+      "line": 37
+    },
+    {
+      "file": "lib/main.dart",
+      "description": "### Column\r\n\r\n`Column` is one of the most basic layout widgets in Flutter. \r\n\r\nIt takes any number of children and puts them in a column from top to bottom. \r\n\r\nBy default, the column visually places its children at the top. \r\n\r\nYou'll soon change this so that the column is centered.\r\n",
+      "line": 38
+    },
+    {
+      "file": "lib/main.dart",
+      "description": "### Display generated word with Text widget\r\n\r\nThis second Text widget takes `appState`, and accesses the only member of that class, current (which is a WordPair). WordPair provides several helpful getters, such as asPascalCase or asSnakeCase. Here, we use asLowerCase but you can change this now if you prefer one of the alternatives.\r\n\r\n>> ./script/vscode-open-commit.sh 24bb0d09d9e2c56b7a0818be6d32882a52683299",
+      "line": 41
+    }
+  ],
+  "ref": "24bb0d09d9e2c56b7a0818be6d32882a52683299"
+}
