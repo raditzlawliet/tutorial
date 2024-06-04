@@ -15,8 +15,23 @@ class UserListView extends StatelessWidget {
                 itemCount: state.users.length,
                 itemBuilder: (context, index) {
                   return ListTile(
+                    leading: CircleAvatar(
+                      radius: 20,
+                      child: Text(
+                        state.users[index].name.substring(0, 1).toUpperCase(),
+                      ),
+                    ),
                     title: Text(state.users[index].name),
                     subtitle: Text(state.users[index].email),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              UserDetailPage(user: state.users[index]),
+                        ),
+                      );
+                    },
                   );
                 },
               ),
