@@ -1,0 +1,119 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Prepare Project",
+  "steps": [
+    {
+      "file": "../flutter-counter-cubit/pubspec.yaml",
+      "selection": {
+        "start": {
+          "line": 30,
+          "character": 1
+        },
+        "end": {
+          "line": 39,
+          "character": 1
+        }
+      },
+      "description": "## Add Dependency\r\n\r\nWe will use cubit, so add `bloc` and `flutter_bloc` in our depedencies.\r\n\r\nSee more on: https://bloclibrary.dev/getting-started/\r\n"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/cubit/counter_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 1
+        }
+      },
+      "description": "## Create CounterCubit\r\n\r\n1. Create `CounterCubit` in `lib/counter/cubit/counter_cubit.dart`.\r\n2. Extends with `Cubit<int>`, it will tell our CounterCubit will hold state in integer. \r\n    - We will use integer state as our counter number.\r\n3. Line 8: Make default state as 0 when creating the class\r\n4. Line 11: add new function `increment()`, it will update the state or counter number with plus one using `emit()`, \"state must be update via `emit()`\".\r\n5. Line 14: same with `decrement()`, it will decrease the state or counter number."
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter_observer.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 18,
+          "character": 1
+        }
+      },
+      "description": "## Create CounterObserver\r\n\r\nCreate `CounterObserver`, which will help us observe all state changes in the application.\r\n\r\nWhenever any state in any bloc changes, it will call onChange().\r\n\r\nFor now we can debug using `print()`\r\n"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/counter_page.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "## Create CounterPage\r\n\r\nPrepare `CounterPage` in `lib/counter/view/counter_page.dart` with `Placeholder` or `Scaffold`."
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/view.dart",
+      "selection": {
+        "start": {
+          "line": 5,
+          "character": 2
+        },
+        "end": {
+          "line": 5,
+          "character": 90
+        }
+      },
+      "description": "## Barrel for Counter Views\r\n\r\nSince we may have more view. We can grouping our view counter into single import file, this things called barrel.\r\n\r\n*A barrel is a way to rollup of imports from several files into a single convenient file.*\r\n\r\n"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/counter.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 3,
+          "character": 1
+        }
+      },
+      "description": "## Barrel for Counter\r\n\r\nSame with view, now we Barrel all files inside `lib/counter/*` so in the future our apps only import this **single file**."
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "## Create CounterApp\r\n\r\nCreate `lib/app.dart` it will hold our *CounterApp*.\r\n\r\nLike always we use MaterialApp as our base design widgets.\r\n\r\nMake our `CounterApp.home` to `CounterPage`, which it will show a `Placeholder` before"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 35
+        },
+        "end": {
+          "line": 3,
+          "character": 75
+        }
+      },
+      "description": "## Rework `main()` with new `CounterApp`\r\n\r\nRework our main() now call `CounterApp`.\r\n\r\nIt also clean up our project structure.\r\n\r\n>> ./script/vscode-open-commit.sh b2236b85622d7b922b3047995c717dbec24f6ed2"
+    }
+  ],
+  "ref": "b2236b85622d7b922b3047995c717dbec24f6ed2"
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Implement Cubit to App",
+  "steps": [
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/counter_view.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 44,
+          "character": 1
+        }
+      },
+      "description": "## Create CounterView\r\n\r\nCreate our *CounterView*, it will more spesific to what will display in our CounterPage.\r\n\r\n"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/counter_view.dart",
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 16
+        },
+        "end": {
+          "line": 21,
+          "character": 13
+        }
+      },
+      "description": "## Add BlocBuilder to show current our CounterCubit state\r\n\r\nTo get the CounterCubit current values in state, we need `BlocProvider` and `BlocBuilder`.\r\n\r\n`BlocProvider` will provides all widgets inside with Cubit context. https://bloclibrary.dev/flutter-bloc-concepts/#blocprovider\r\n\r\n`BlocBuilder` will provides to rebuild widgets whenenver cubit state changes. https://bloclibrary.dev/flutter-bloc-concepts/#blocbuilder\r\n\r\nIn this case. we put `BlocBuilder` before showing current counter using `Text('$state')`. \r\nSo whenever counter or state changes, it will rebuild with new text with new counter number or state."
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/counter_view.dart",
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 11
+        },
+        "end": {
+          "line": 38,
+          "character": 13
+        }
+      },
+      "description": "## Add Increment and Decrement Floating Button\r\n\r\nAdd 2 `FloatingActionButton` to call increment and decrement counter.\r\n\r\nWe can call `CounterCubit` function using `context.read<CounterCubit>()`. and `CounterCubit.increment()` will emit or update the state or counter.\r\n\r\nTo make `CounterCubit` valid, This parent widget must have `BlocProvider()` and provide `CounterCubit`.\r\n"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/counter_page.dart",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "## Implement `CounterView` to `CounterPage` with `BlocProvider`\r\n\r\nAs mention before, this make `CounterPage` is parent for `CounterView`, we need `BlocProvider` to provide CounterCubit context to all child inside them.\r\nhttps://bloclibrary.dev/flutter-bloc-concepts/#blocprovider\r\n\r\nFor multiple provider, you can use `*MultiBlocProvider*`"
+    },
+    {
+      "file": "../flutter-counter-cubit/lib/counter/view/view.dart",
+      "description": "## Update Counter View Barrel\r\n\r\nLastly, barrel all views into view.dart.\r\n\r\n**And congrats! Counter App with Cubit now done.**\r\n\r\n>> ./script/vscode-open-commit.sh 00f3e86879c5796f667e649aeb30eb5f0fb8cf66",
+      "line": 2
+    }
+  ],
+  "ref": "00f3e86879c5796f667e649aeb30eb5f0fb8cf66"
+}
