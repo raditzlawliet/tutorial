@@ -55,6 +55,7 @@ docker stop welcome
 ```sh
 cd go_sample
 docker build --tag docker-go-ping .
+docker build -t docker-go-ping -f Dockerfile.alpine .
 
 # check the image is exists
 docker image ls
@@ -102,6 +103,7 @@ docker run -d \
 ```sh
 docker compose up -d --build
 docker compose -f docker-compose.yml up -d --build
+docker compose -f docker-compose.alpine.yml up -d --build
 ```
 
 ### Stop compose containers

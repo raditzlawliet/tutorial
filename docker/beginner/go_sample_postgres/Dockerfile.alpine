@@ -1,0 +1,45 @@
+# syntax=docker/dockerfile:1
+
+##
+## Build the application from source
+##
+
+FROM golang:1-alpine AS build-stage
+
+RUN apk add --no-cache build-base
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY *.go ./
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-go-ping
+
+RUN go build -ldflags='-s -w' -trimpath -o /dist/docker-go-ping
+RUN ldd /dist/docker-go-ping | tr -s [:blank:] '\n' | grep ^/ | xargs -I % install -D % /dist/%
+RUN ln -s ld-musl-x86_64.so.1 /dist/lib/libc.musl-x86_64.so.1
+
+##
+## Run the tests in the container
+##
+
+FROM build-stage AS run-test-stage
+RUN go test -v ./...
+
+##
+## Deploy the application binary into a lean image
+##
+
+FROM scratch AS build-release-stage
+
+WORKDIR /
+
+COPY --from=build-stage /docker-go-ping /docker-go-ping
+
+EXPOSE 8080
+
+USER 65534
+
+ENTRYPOINT ["/docker-go-ping"]
