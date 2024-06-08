@@ -1,16 +1,23 @@
-# flutter_login_api
+# Tutorial - Login App with API (with Cubit, FormZ and dio)
 
-A new Flutter project.
+...
 
-## Getting Started
+## How to use
 
-This project is a starting point for a Flutter application.
+- Clone repository
+- Open with VSCode, Flutter SDK and Mobile (Android or iOS) SDK
+- Enable Flutter and Dart VSCode extension
+- Enable Codetour VSCode extension (https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
+- Follow Codetour topic and step, each topic has script to automatically reclone with spesific commit.
 
-A few resources to get you started if this is your first Flutter project:
+## Support
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+If you have any questions or encounter any issues, feel free to open an issue and we will assist you in resolving them.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contribute
+
+Feel free to contribute, don't forget to mention if needed
+
+## Author and Contributor
+
+- [@raditzlawliet](https://github.com/raditzlawliet/)
