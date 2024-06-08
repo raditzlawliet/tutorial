@@ -18,7 +18,7 @@ class LoginForm extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(
               const SnackBar(
-                content: Text("Login Failed"),
+                content: Text("Authentication Failed"),
               ),
             );
         }
@@ -56,9 +56,10 @@ class InputUsername extends StatelessWidget {
               context.read<LoginCubit>().usernameChanged(value),
           decoration: InputDecoration(
             labelText: 'Username',
-            errorText: state.username.error == UsernameValidationError.empty
-                ? 'invalid username'
-                : null,
+            errorText:
+                state.username.displayError == UsernameValidationError.empty
+                    ? 'invalid username'
+                    : null,
           ),
         );
       },
@@ -84,7 +85,7 @@ class InputPassword extends StatelessWidget {
             decoration: InputDecoration(
               labelText: "password",
               errorText: (() {
-                switch (state.password.error) {
+                switch (state.password.displayError) {
                   case PasswordValidationError.minimumLength:
                     return 'Password minimum 6 characters';
                   case PasswordValidationError.empty:
