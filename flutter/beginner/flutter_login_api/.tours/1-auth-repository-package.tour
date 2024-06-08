@@ -1,0 +1,115 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Create Auth Repository Package",
+  "steps": [
+    {
+      "directory": "packages/auth_repository",
+      "description": "### Create packages/auth_repository folder\r\n\r\nCreate local packages called Auth Repository.\r\n\r\nThis will manages the authentication domain."
+    },
+    {
+      "file": "packages/auth_repository/pubspec.yaml",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### Add pubspec.yaml for Auth Repository\r\n\r\nPackages have separate depedency. Create pubspec and add depedency based on package needs.\r\n\r\n\r\nSince Auth Repository will have a state and do http request, we need:\r\n\r\n- add `dio` for networking services\r\n- add `equatable` for cubit state compareable"
+    },
+    {
+      "file": "packages/auth_repository/lib/src/auth_token.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "### Create AuthToken\r\n\r\nAuthToken is class for valid login response. It also have `.fromJSON` to convert JSON map to AuthToken Class.\r\n\r\nJSON from response should be:\r\n```json\r\n{\r\n    \"token\": \"xxxxx.yyyyy.zzzzz\",\r\n    ...\r\n}\r\n```\r\n",
+      "line": null
+    },
+    {
+      "file": "packages/auth_repository/lib/src/auth_repository.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 61,
+          "character": 1
+        }
+      },
+      "description": "### Create AuthRepository\r\n\r\nAuthRepository will save and handle auth domain."
+    },
+    {
+      "file": "packages/auth_repository/lib/src/auth_repository.dart",
+      "description": "### AuthStatus\r\n\r\n- AuthRepository will have 3 status for identifier.",
+      "line": 7
+    },
+    {
+      "file": "packages/auth_repository/lib/src/auth_repository.dart",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 25,
+          "character": 1
+        }
+      },
+      "description": "### AuthRepository variables\r\n\r\n- Initialize all necessary like `dio` http, `baseUrl`\r\n- `StreamController` This controller allows sending data, error and done events on its stream. This will be used to stream auth in app later.\r\n\r\n```dart\r\n  // To create a stream builder,\r\n  // we create a function with the keyword ‘async*’ and have it return a stream\r\n  Stream<AuthStatus> get status async* {\r\n    // To emit a data, we can use the keyword ‘yield’,\r\n    yield AuthStatus.unauthenticated;\r\n    //to emit all data from another stream, we can use the keyword ‘yield*’\r\n    yield* _controller.stream;\r\n  }\r\n```\r\n\r\n- Later, we can listen by `status.listen(event);`"
+    },
+    {
+      "file": "packages/auth_repository/lib/src/auth_repository.dart",
+      "selection": {
+        "start": {
+          "line": 25,
+          "character": 1
+        },
+        "end": {
+          "line": 49,
+          "character": 1
+        }
+      },
+      "description": "### AuthRepository.login()\r\n\r\n- Have username and password input\r\n- Line 30: Do call POST `/auth/login` and send username & password as json payload.\r\n- Line 35: Check if response is 200 or OK\r\n    - Line 36: Convert response.data json into AuthToken\r\n    - Line 37: new auth stream, current auth is authenticated.\r\n- Line 41 & 46: If response status code is not 200 or invalid or something error wrong others. Throw exception error.\r\n"
+    },
+    {
+      "file": "packages/auth_repository/lib/src/auth_repository.dart",
+      "selection": {
+        "start": {
+          "line": 50,
+          "character": 1
+        },
+        "end": {
+          "line": 60,
+          "character": 1
+        }
+      },
+      "description": "### AuthRepository.logout()\r\n\r\n- `logout()` will remove existing token and sent auth status unauthenticated.\r\n- `getCurrentToken()` to get currentToken.\r\n- Italso need to close stream on `dispose()`"
+    },
+    {
+      "file": "packages/auth_repository/lib/auth_repository.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 2,
+          "character": 1
+        }
+      },
+      "description": "### Barrel Auth Repository\r\n\r\n- create auth_repository.dart\r\n- export files in auth_repository that can be exposed.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}

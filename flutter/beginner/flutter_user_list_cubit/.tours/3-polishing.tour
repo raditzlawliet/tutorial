@@ -1,0 +1,59 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Polishing & Implement User Detail",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "description": "## Update Counter View Barrel",
+      "line": 2
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 1
+        },
+        "end": {
+          "line": 24,
+          "character": 1
+        }
+      },
+      "description": "### Add Circle Avatar based on name first character"
+    },
+    {
+      "file": "lib/user_list/view/user_detail_page.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 45,
+          "character": 1
+        }
+      },
+      "description": "### Create `UserDetailPage` for viewing user detail on tap "
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 26,
+          "character": 1
+        },
+        "end": {
+          "line": 35,
+          "character": 1
+        }
+      },
+      "description": "### Implement `ListView.item` when `onTap()` do navigate to `UserDetailPage`"
+    },
+    {
+      "file": "lib/user_list/view/user_list_page.dart",
+      "description": "### Update import on main file of user_list_page.dart\r\n\r\n>> ./script/vscode-open-commit.sh 20f7de368a15e5e1e68602e6004ac312b693d428",
+      "line": 4
+    }
+  ],
+  "ref": "20f7de368a15e5e1e68602e6004ac312b693d428"
+}

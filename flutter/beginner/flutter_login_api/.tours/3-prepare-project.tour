@@ -1,0 +1,35 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Prepare Project",
+  "steps": [
+    {
+      "file": "pubspec.yaml",
+      "selection": {
+        "start": {
+          "line": 37,
+          "character": 1
+        },
+        "end": {
+          "line": 45,
+          "character": 1
+        }
+      },
+      "description": "### Add Dependency\r\n\r\n- add `bloc` and `flutter_bloc` to use cubit in our depedencies. See more on: https://bloclibrary.dev/getting-started/\r\n- `equatable` for comparing state. See more on: https://pub.dev/packages/equatable\r\n- `formz` for form representation and validation in a generic way. See more on: https://pub.dev/packages/formz\r\n- add `auth_repository` and `user_repository` as local packages created in previous step"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 7,
+          "character": 1
+        }
+      },
+      "description": "### Rework `main()` with new `App`\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}

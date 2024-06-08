@@ -1,0 +1,105 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5. Implement App and Navigate Them",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 7,
+          "character": 1
+        }
+      },
+      "description": "### main.dart\r\n\r\nReplace default `main.dart`.\r\n\r\nWe are injecting a single instance of the AuthRepository and UserRepository into the App widget (which we will get to next)."
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 110,
+          "character": 1
+        }
+      },
+      "description": "### Create App\r\n\r\n`app.dart` will contain the root **App** widget for the entire application.\r\n\r\n`app.dart` is split into two parts **App** and **AppScreen**. \r\n\r\n**App** is responsible for creating/providing the **AuthCubit** which will be consumed by the **AppScreen**. This decoupling will enable us to easily test both the App and **AppScreen** widgets later on.\r\n\r\n"
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 34,
+          "character": 1
+        },
+        "end": {
+          "line": 46,
+          "character": 4
+        }
+      },
+      "description": "### RepositoryProvider to entire application\r\n\r\n**RepositoryProvider** is used to provide the single instance of **AuthRepository** to the entire application which will come in handy later on.\r\n\r\nSee more: https://bloclibrary.dev/flutter-bloc-concepts/#repositoryprovider"
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 57,
+          "character": 1
+        },
+        "end": {
+          "line": 60,
+          "character": 1
+        }
+      },
+      "description": "### NavigatorState\r\n\r\n**AppScreen** is a **StatefulWidget** because it maintains a **GlobalKey** which is used to access the **NavigatorState**. By default, **AppScreen** will render the **SplashScreen** (which we will see later) and it uses **BlocListener** to navigate to different pages based on changes in the **AuthState**.\r\n\r\n"
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 90,
+          "character": 1
+        },
+        "end": {
+          "line": 106,
+          "character": 1
+        }
+      },
+      "description": "### Route\r\n\r\nThis will be our application route configuration. which is default is '/' or `SplashScreen.route()`."
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 1
+        },
+        "end": {
+          "line": 7,
+          "character": 75
+        }
+      },
+      "description": "### BlocListener to listen auth and navigate\r\n\r\nThis section will listen to `AuthState.state.status` and navigate to login or home screen.\r\n- we may use `pushNamedAndRemoveUntil` with named router or\r\n- use `pushAndRemoveUntil` with static route() we will create in each Screen later.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    },
+    {
+      "file": "lib/splash_screen.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 21,
+          "character": 1
+        }
+      },
+      "description": "### SplashScreen\r\n\r\nThe splash feature will just contain a simple view which will be rendered right when the app is launched while the app determines whether the user is authenticated.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}

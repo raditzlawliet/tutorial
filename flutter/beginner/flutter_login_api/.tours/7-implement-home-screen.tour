@@ -1,0 +1,63 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "7. Implement Home Screen",
+  "steps": [
+    {
+      "file": "lib/home/screen/home_screen.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 46,
+          "character": 1
+        }
+      },
+      "description": "### Create HomeScreen\r\n\r\nThis will display home screen"
+    },
+    {
+      "file": "lib/home/screen/home_screen.dart",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 1
+        },
+        "end": {
+          "line": 12,
+          "character": 4
+        }
+      },
+      "description": "### HomeScreen.route()\r\n\r\nHomeScreen exposes a static Route which makes it very easy to navigate to via `Navigator.of(context).push(SplashPage.route());`"
+    },
+    {
+      "file": "lib/home/screen/home_screen.dart",
+      "selection": {
+        "start": {
+          "line": 21,
+          "character": 1
+        },
+        "end": {
+          "line": 34,
+          "character": 1
+        }
+      },
+      "description": "### HomeScreen Builder\r\n\r\n`context.select((AuthCubit auth) => auth.state.user.id)` will trigger updates if the user id changes.\r\n\r\n"
+    },
+    {
+      "file": "lib/home/screen/home_screen.dart",
+      "selection": {
+        "start": {
+          "line": 34,
+          "character": 1
+        },
+        "end": {
+          "line": 40,
+          "character": 1
+        }
+      },
+      "description": "### Logout Button\r\n\r\n`context.read<AuthCubit>().logout();` also call `AuthRepository.logout()`\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}

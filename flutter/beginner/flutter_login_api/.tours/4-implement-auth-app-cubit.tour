@@ -1,0 +1,77 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "4. Implement Auth App Cubit",
+  "steps": [
+    {
+      "file": "lib/auth/cubit/auth_state.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 21,
+          "character": 1
+        }
+      },
+      "description": "### Create auth/cubit/AuthState\r\n\r\n**AuthState** instances will be the output of the **AuthCubit** and will be consumed by the presentation layer.\r\n\r\nThe **AuthState** class has three named constructors:\r\n- `AuthState.unknown()`: the default state which indicates that the bloc does not yet know whether the current user is authenticated or not.\r\n- `AuthState.authenticated()`: the state which indicates that the user is current authenticated.\r\n- `AuthState.unauthenticated()`: the state which indicates that the user is current not authenticated."
+    },
+    {
+      "file": "lib/auth/cubit/auth_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 72,
+          "character": 1
+        }
+      },
+      "description": "### Create auth/cubit/AuthCubit\r\n\r\nThe **AuthCubit** manages the authentication state of the application which is used to determine things like whether or not to start the user at a login page or a home page.\r\n\r\nThe **AuthCubit** has a dependency on both the **AuthRepository** and **UserRepository** and defines the initial state as `AuthState.unknown()`.\r\n\r\nIn the constructor body, the **AuthCubit** subscribes to the status stream of the **AuthRepository** and update **AuthState** in response to a new **AuthStatus**.\r\n\r\n"
+    },
+    {
+      "file": "lib/auth/cubit/auth_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 38,
+          "character": 1
+        },
+        "end": {
+          "line": 50,
+          "character": 1
+        }
+      },
+      "description": "### On AuthStatus == AuthStatus.authenticated\r\n\r\nWhenever AuthStatus change AuthStatus.authenticated. It will try to get current token (from last login) and update or get the user in **UserRepository**.\r\n\r\nIf anything goes wrong, just emit back to unauthenticated."
+    },
+    {
+      "file": "lib/auth/cubit/auth_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 58,
+          "character": 1
+        },
+        "end": {
+          "line": 61,
+          "character": 1
+        }
+      },
+      "description": "### AuthCubit.logout()\r\n\r\nSince presentation layer can't directly access repository. We can use this and call `AuthRepository.logout()`, we also can add additional logic if needed for our app."
+    },
+    {
+      "file": "lib/auth/auth.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 1,
+          "character": 32
+        }
+      },
+      "description": "### Barrel all auth cubit into auth.dart\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}

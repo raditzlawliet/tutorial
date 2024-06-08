@@ -1,0 +1,161 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Prepare Project And User List Cubit",
+  "steps": [
+    {
+      "file": "pubspec.yaml",
+      "selection": {
+        "start": {
+          "line": 38,
+          "character": 1
+        },
+        "end": {
+          "line": 42,
+          "character": 1
+        }
+      },
+      "description": "### Add Dependency\r\n\r\n- We will use cubit, so add `bloc` and `flutter_bloc` in our depedencies. See more on: https://bloclibrary.dev/getting-started/\r\n- We also use `equatable`. See more on: https://pub.dev/packages/equatable\r\n- We also use `dio` for http networking or fetching data via http. See more on: https://pub.dev/packages/dio\r\n"
+    },
+    {
+      "file": "lib/user_list/model/user.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 17,
+          "character": 1
+        }
+      },
+      "description": "### Create User List - User Model"
+    },
+    {
+      "file": "lib/user_list/cubit/user_list_state.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 34,
+          "character": 1
+        }
+      },
+      "description": "### Create User List - Cubit State\r\n\r\n"
+    },
+    {
+      "file": "lib/user_list/cubit/user_list_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 32,
+          "character": 1
+        }
+      },
+      "description": "### Create User List - Cubit"
+    },
+    {
+      "file": "lib/user_list/cubit/user_list_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 11,
+          "character": 1
+        },
+        "end": {
+          "line": 30,
+          "character": 1
+        }
+      },
+      "description": "### Implement `fetchUser()` in `UserListCubit`"
+    },
+    {
+      "file": "lib/user_list/cubit/user_list_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 19,
+          "character": 9
+        },
+        "end": {
+          "line": 23,
+          "character": 44
+        }
+      },
+      "description": "### When fetchUser() success\r\n\r\n- Do map from JSON to User Model\r\n- Emit or Set UserListState to `success` and pass users list "
+    },
+    {
+      "file": "lib/user_list/cubit/user_list_cubit.dart",
+      "description": "### When fetchUser() failed\r\n\r\n- Set state to error and pass the error\r\n- Line 28: If anything wrong, we also catch the error and pass the error",
+      "selection": {
+        "start": {
+          "line": 25,
+          "character": 1
+        },
+        "end": {
+          "line": 29,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "lib/user_list/view/user_list_page.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 20,
+          "character": 1
+        }
+      },
+      "description": "### Create `UserListPage` Placeholder"
+    },
+    {
+      "file": "lib/user_list/user_list.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 5,
+          "character": 35
+        }
+      },
+      "description": "### Barrel them all into `user_list.dart`"
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 18,
+          "character": 1
+        }
+      },
+      "description": "### Create App\r\n\r\n"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 7,
+          "character": 1
+        }
+      },
+      "description": "### Rework `main()` with new `App`\r\n\r\n>> ./script/vscode-open-commit.sh 4e25ca6d577a854997c735eeeb7a9fb1024f6ae8"
+    }
+  ],
+  "ref": "4e25ca6d577a854997c735eeeb7a9fb1024f6ae8"
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Implement Cubit to Flutter Widget View",
+  "steps": [
+    {
+      "file": "lib/main.dart",
+      "description": "## Update Counter View Barrel",
+      "line": 2
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 1
+        },
+        "end": {
+          "line": 23,
+          "character": 9
+        }
+      },
+      "description": "### Bonus! Enable scroll behavior using other devices on web"
+    },
+    {
+      "file": "lib/user_list/view/user_list_page.dart",
+      "selection": {
+        "start": {
+          "line": 12,
+          "character": 1
+        },
+        "end": {
+          "line": 15,
+          "character": 7
+        }
+      },
+      "description": "### Implement `BlocProvider` of `UserListCubit` on `UserListPage` to provide context for `UserListView`\r\n"
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 61,
+          "character": 1
+        }
+      },
+      "description": "### Create UserListView for our User List UI"
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 48,
+          "character": 1
+        },
+        "end": {
+          "line": 55,
+          "character": 1
+        }
+      },
+      "description": "### Implement Initial State View"
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 43,
+          "character": 1
+        },
+        "end": {
+          "line": 47,
+          "character": 1
+        }
+      },
+      "description": "### Implement Loading State View"
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 12,
+          "character": 1
+        },
+        "end": {
+          "line": 28,
+          "character": 1
+        }
+      },
+      "description": "### Implement Success State View"
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 14,
+          "character": 21
+        },
+        "end": {
+          "line": 22,
+          "character": 17
+        }
+      },
+      "description": "### Create ListView via builder with list of users"
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
+          "line": 29,
+          "character": 1
+        },
+        "end": {
+          "line": 42,
+          "character": 1
+        }
+      },
+      "description": "### Implement Error State View"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "## Implement `CounterView` to `CounterPage` with `BlocProvider`\r\n\r\n>> ./script/vscode-open-commit.sh 20f14efd58ed977b81e4fcb93f307f6674d3f375"
+    }
+  ],
+  "ref": "20f14efd58ed977b81e4fcb93f307f6674d3f375"
+}

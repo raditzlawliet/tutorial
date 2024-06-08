@@ -1,0 +1,217 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "6. Implement Login Screen",
+  "steps": [
+    {
+      "directory": "lib/login/models",
+      "description": "### Login Model\r\n\r\nWe are using `package:formz` to create reusable and standard models for the username and password.",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 15
+        },
+        "end": {
+          "line": 3,
+          "character": 28
+        }
+      }
+    },
+    {
+      "file": "lib/login/models/username.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 15,
+          "character": 1
+        }
+      },
+      "description": "### Username Model\r\n\r\nFor simplicity, we are just validating the username to ensure that it is not empty but in practice you can enforce special character usage, length, etc…"
+    },
+    {
+      "file": "lib/login/models/password.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 1
+        }
+      },
+      "description": "### Password Model\r\n\r\nFor simplicity, we are just validating the password to ensure that it is not empty but in practice you can enforce special character usage, length, etc…"
+    },
+    {
+      "file": "lib/login/models/models.dart",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 31
+        },
+        "end": {
+          "line": 3,
+          "character": 42
+        }
+      },
+      "description": "### Model Barrel\r\n\r\nJust like before, there is a `models.dart` barrel to make it easy to import the Username and Password models with a single import.\r\n\r\n"
+    },
+    {
+      "file": "lib/login/cubit/login_state.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 33,
+          "character": 1
+        }
+      },
+      "description": "### Create login/cubit/login_state.dart\r\n\r\nThe **LoginState** will contain the status of the form as well as the username and password input states.\r\n\r\nThe **Username** and **Password** models are used as part of the **LoginState** and the status is also part of `package:formz`."
+    },
+    {
+      "file": "lib/login/cubit/login_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "### Create login/cubit/login_cubit.dart\r\n\r\nThe LoginCubit is responsible for reacting to user interactions in the LoginForm and handling the validation and submission of the form.\r\n\r\nHere we also need `authRepository` to call `AuthRepository.login()` when login submitted via **LoginCubit**"
+    },
+    {
+      "file": "lib/login/cubit/login_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 17,
+          "character": 1
+        },
+        "end": {
+          "line": 33,
+          "character": 4
+        }
+      },
+      "description": "### LoginCubit.usernameChanged() & LoginCubit.passwordChanged()\r\n\r\nWhenever either the username or password change, this will create a dirty variant of the Username/Password model and update the form status via the `Formz.validate` API."
+    },
+    {
+      "file": "lib/login/cubit/login_cubit.dart",
+      "selection": {
+        "start": {
+          "line": 35,
+          "character": 1
+        },
+        "end": {
+          "line": 49,
+          "character": 1
+        }
+      },
+      "description": "### LoginCubit.loginSubmitted()\r\n\r\nWhen the `LoginSubmitted` is called, if the current status of the form is valid, makes a call to logIn and updates the status based on the outcome of the request."
+    },
+    {
+      "file": "lib/login/screen/login_screen.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 33,
+          "character": 1
+        }
+      },
+      "description": "### Create **LoginScreen** on login/screen/login_screen.dart\r\n\r\nThe **LoginScreen** is responsible for exposing the Route as well as creating and providing the LoginCubit to the LoginForm.\r\n\r\n"
+    },
+    {
+      "file": "lib/login/screen/login_screen.dart",
+      "selection": {
+        "start": {
+          "line": 21,
+          "character": 1
+        },
+        "end": {
+          "line": 29,
+          "character": 1
+        }
+      },
+      "description": "### Provide **BlocProvider** in **LoginScreen**\r\n\r\nCreating **LoginCubit** with **AuthRepository** (from **RepositoryProvider** in AppScreen context). and provide to all children under **LoginScreen** e.g., **LoginForm**."
+    },
+    {
+      "file": "lib/login/screen/login_form.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 123,
+          "character": 1
+        }
+      },
+      "description": "### Create LoginForm\r\n\r\nThe LoginForm handles responds to state changes using BlocBuilder and BlocListener.\r\n\r\n"
+    },
+    {
+      "file": "lib/login/screen/login_form.dart",
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 1
+        },
+        "end": {
+          "line": 26,
+          "character": 1
+        }
+      },
+      "description": "### Using BlocListener.listener to show error\r\n\r\n**BlocListener** is used to show a **SnackBar** if the login submission fails.\r\n\r\n**BlocListener** should be used for functionality that needs to occur once per state change such as navigation, showing a SnackBar, showing a Dialog, etc…\r\n\r\nSee: https://bloclibrary.dev/flutter-bloc-concepts/#bloclistener\r\n"
+    },
+    {
+      "file": "lib/login/screen/login_form.dart",
+      "selection": {
+        "start": {
+          "line": 50,
+          "character": 1
+        },
+        "end": {
+          "line": 66,
+          "character": 1
+        }
+      },
+      "description": "### InputUsername with BlocBuilder\r\n\r\nIn addition, **BlocBuilder** widgets are used to wrap each of the **TextField** widgets and make use of the `buildWhen` property in order to optimize for rebuilds. \r\n\r\nThe `onChanged` callback is used to notify the **LoginCubit** of changes to the username/password.\r\n\r\n"
+    },
+    {
+      "file": "lib/login/screen/login_form.dart",
+      "selection": {
+        "start": {
+          "line": 76,
+          "character": 1
+        },
+        "end": {
+          "line": 98,
+          "character": 12
+        }
+      },
+      "description": "### InputPassword with BlocBuilder\r\n\r\nSame with InputUsername. In addition, **BlocBuilder** widgets are used to wrap each of the **TextField** widgets and make use of the `buildWhen` property in order to optimize for rebuilds. \r\n\r\nThe `onChanged` callback is used to notify the **LoginCubit** of changes to the username/password.\r\n\r\n"
+    },
+    {
+      "file": "lib/login/screen/login_form.dart",
+      "selection": {
+        "start": {
+          "line": 76,
+          "character": 1
+        },
+        "end": {
+          "line": 99,
+          "character": 1
+        }
+      },
+      "description": "### ButtonSubmit with BlocBuilder\r\n\r\nWe can use **BlocBuilder** to prevent user double submit, so when status **isInProgress**, it will show **CircualProgressIndicator**.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}

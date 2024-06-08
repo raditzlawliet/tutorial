@@ -1,0 +1,109 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Create User Repository Package",
+  "steps": [
+    {
+      "directory": "packages/user_repository",
+      "description": "### Create packages/user_repository folder\r\n\r\nCreate local packages called User Repository.\r\n\r\nThis will manages the user domain."
+    },
+    {
+      "file": "packages/user_repository/pubspec.yaml",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### Add pubspec.yaml for User Repository\r\n\r\nPackages have separate depedency. Create pubspec and add depedency based on package needs.\r\n\r\nSince User Repository will do http request, we need:\r\n\r\n- add `dio` for networking services\r\n"
+    },
+    {
+      "file": "packages/user_repository/lib/src/models/user.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 23,
+          "character": 1
+        }
+      },
+      "description": "### Create User Model\r\n\r\n`User` Class will hold user identity based on auth-me request. It also need `.fromJson()` to convert JSON to User model.\r\n\r\n```json\r\n// https://dummyjson.com/docs/auth#auth-me\r\n{\r\n  \"id\": 1,\r\n  \"username\": \"emilys\",\r\n  \"firstName\": \"Emily\",\r\n  \"lastName\": \"Johnson\",\r\n  ... // other user fields\r\n}\r\n```\r\n"
+    },
+    {
+      "file": "packages/user_repository/lib/src/models/models.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 2,
+          "character": 1
+        }
+      },
+      "description": "### Barrel User Model"
+    },
+    {
+      "file": "packages/user_repository/lib/src/user_repository.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 38,
+          "character": 1
+        }
+      },
+      "description": "### Create UserRepository\r\n\r\nSimilar with AuthRepository, this will responsibility user domain.\r\n- `getUser()` will do call get current user based on `token` provided from `AuthRepository.AuthToken.token`."
+    },
+    {
+      "file": "packages/user_repository/lib/src/user_repository.dart",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### UserRepository variables\r\n\r\n- Initialize all necessary like `dio` http, `baseUrl`\r\n- `_user` is current user cache.\r\n- `_lastToken` is used for comparing new token to determined we should do call http get user or use `_user` cache.\r\n"
+    },
+    {
+      "file": "packages/user_repository/lib/src/user_repository.dart",
+      "selection": {
+        "start": {
+          "line": 12,
+          "character": 1
+        },
+        "end": {
+          "line": 37,
+          "character": 1
+        }
+      },
+      "description": "### UserRepository.getUser()\r\n\r\n- Line 13: Check if `_user` already exists, return `_user` cache. Plus compare `_lastToken` with `token` as differnet token may have different user.\r\n- Line 16: call `/auth/me` to get current user information.\r\n- Line 25: Check if response is success\r\n    - Line 26-27: Convert JSON Response map to User Model and set to `_user` cache + return it.\r\n- Line 29 & 34: Like always, something error or not intended, throw error \r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    },
+    {
+      "file": "packages/user_repository/lib/user_repository.dart",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 3,
+          "character": 1
+        }
+      },
+      "description": "### Barrel User Repository\r\n\r\n- create user_repository.dart\r\n- export files in user_repository that can be exposed.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    }
+  ],
+  "ref": "82ee9019051080edecd65f435f945760708ab7df"
+}
