@@ -1,6 +1,6 @@
 # Tutorial
 
-Collection materials of tutorial
+Tutorial tech. material collections
 
 ## Material
 
