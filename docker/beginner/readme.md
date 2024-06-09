@@ -140,3 +140,15 @@ npm run dev
 docker build -t vue_sample .
 docker run -d -p 80:80 --name vue_sample vue_sample
 ```
+
+## Other Things
+
+Interesting ENTRYPOINT vs CMD: https://spacelift.io/blog/docker-entrypoint-vs-cmd
+
+- ENTRYPOINT is the process that’s executed inside the container.
+- CMD is the default set of arguments that are supplied to the ENTRYPOINT process.
+
+There are also differences in how you override these values when you start a container:
+
+- CMD is easily overridden by appending your own arguments to the docker run command.
+- ENTRYPOINT can be changed using the --entrypoint flag, but this should rarely be necessary for container images being used in the way they were intended. If you do change the ENTRYPOINT, you’ll almost certainly need to set a custom CMD too—as otherwise, your new ENTRYPOINT is likely to receive arguments that it doesn’t understand.
