@@ -36,4 +36,4 @@ EXPOSE 8080
 
 USER nonroot:nonroot
 
-ENTRYPOINT ["/docker-go-ping"]
+CMD ["/docker-go-ping"]

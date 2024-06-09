@@ -42,4 +42,4 @@ EXPOSE 8080
 
 USER 65534
 
-ENTRYPOINT ["/docker-go-ping"]
+CMD ["/docker-go-ping"]
