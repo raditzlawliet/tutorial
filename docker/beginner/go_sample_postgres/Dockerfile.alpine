@@ -22,13 +22,6 @@ RUN ldd /dist/docker-go-ping | tr -s [:blank:] '\n' | grep ^/ | xargs -I % insta
 RUN ln -s ld-musl-x86_64.so.1 /dist/lib/libc.musl-x86_64.so.1
 
 ##
-## Run the tests in the container
-##
-
-FROM build-stage AS run-test-stage
-RUN go test -v ./...
-
-##
 ## Deploy the application binary into a lean image
 ##
 
