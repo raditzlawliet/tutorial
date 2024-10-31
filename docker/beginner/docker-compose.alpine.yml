@@ -16,7 +16,7 @@ services:
       - DB_PORT=${DB_PORT}
     # build with given Dockerfile 
     build:
-      context: ./go_sample_postgres/
+      context: ./go-sample-postgres/
       dockerfile: Dockerfile.alpine
     # environment file
     env_file:
@@ -40,7 +40,7 @@ services:
     container_name: vue_container
     # build with given Dockerfile
     build:
-      context: ./vue_sample/
+      context: ./vue-sample/
       dockerfile: Dockerfile
     # environment file
     env_file:

@@ -130,15 +130,15 @@ docker compose -f docker-compose.yml down -d --build
 ## Vue
 
 ```sh
-npx create-vue vue_sample
-cd vue_sample
+npx create-vue vue-sample
+cd vue-sample
 npm install
 code .
 npm run dev
 
 
-docker build -t vue_sample .
-docker run -d -p 80:80 --name vue_sample vue_sample
+docker build -t vue-sample .
+docker run -d -p 80:80 --name vue-sample vue-sample
 ```
 
 ## Other Things

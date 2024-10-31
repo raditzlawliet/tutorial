@@ -1,4 +1,4 @@
-module github.com/raditzlawliet/tutorial/docker/beginner/go_sample
+module github.com/raditzlawliet/tutorial/docker/beginner/go-sample-postgres
 
 go 1.19
 
