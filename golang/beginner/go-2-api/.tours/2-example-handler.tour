@@ -1,0 +1,45 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Example Handler",
+  "steps": [
+    {
+      "file": "main.go",
+      "description": "New Group handler (will be /arith path)",
+      "line": 21
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 23,
+          "character": 1
+        },
+        "end": {
+          "line": 34,
+          "character": 1
+        }
+      },
+      "description": "New route GET /arith/sum also it will read query \"a\" and \"b\" then return JSON with message sum of a and b"
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 41,
+          "character": 1
+        },
+        "end": {
+          "line": 62,
+          "character": 1
+        }
+      },
+      "description": "Example create handler func"
+    },
+    {
+      "file": "main.go",
+      "description": "Implement arithSubHandler func",
+      "line": 36
+    }
+  ],
+  "ref": "46e650ba5c2ae127aac71ae6facbf58e65f34478"
+}

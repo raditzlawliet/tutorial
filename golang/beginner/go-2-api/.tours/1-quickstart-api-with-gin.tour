@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Quickstart API with Gin",
+  "steps": [
+    {
+      "title": "Prepare Route, Create Handler and Start the server",
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 21,
+          "character": 1
+        }
+      },
+      "description": "Quickstart API with Gin"
+    }
+  ],
+  "ref": "ace9bccf2da83a4397b9f8f954940d0eca331c39"
+}

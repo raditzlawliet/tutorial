@@ -1,0 +1,49 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Example Import Handler",
+  "steps": [
+    {
+      "file": "handlers/auth.go",
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 19,
+          "character": 1
+        }
+      },
+      "description": "AuthInterface is interface that have AuthLogin func. it also can be used public from another package.\r\nauthImplement is struct implemented AuthInterface, it not exposed to another package.\r\nNewAuth() is shortcut to create a new authImplement and exposed to another package."
+    },
+    {
+      "file": "handlers/auth.go",
+      "selection": {
+        "start": {
+          "line": 20,
+          "character": 1
+        },
+        "end": {
+          "line": 41,
+          "character": 1
+        }
+      },
+      "description": "- Implement AuthLogin func handler.\r\n- Line 28: It will read JSON request and Parse to authLoginPayload struct using c.ShouldBindJSON()\r\n- When error deserialize, it will abort the request and return json error with HTTP Status bad request.\r\n- When success it will return HTTP OK 200 and json message"
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 39,
+          "character": 1
+        },
+        "end": {
+          "line": 45,
+          "character": 1
+        }
+      },
+      "description": "- Initialize auth handler\r\n- Create route group /auth\r\n- Create route /auth/login to authHandler.AuthLogin"
+    }
+  ],
+  "ref": "f37d612b61f7a5811ce4d3d18e9dd6aa256fe1bb"
+}
