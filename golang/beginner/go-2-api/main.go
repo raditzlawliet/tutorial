@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/raditzlawliet/tutorial/go/beginner/go-2-api/handlers"
 )
 
 func main() {
@@ -35,6 +36,11 @@ func main() {
 		// defined POST route /arith/sub
 		arith.POST("/sub", arithSubHandler)
 	}
+
+	// grouping route with /auth from handlers folder
+	authHandler := handlers.NewAuth()
+	authRoute := r.Group("/auth")
+	authRoute.POST("/login", authHandler.AuthLogin)
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
