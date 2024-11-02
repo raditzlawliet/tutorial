@@ -15,7 +15,7 @@
           "character": 1
         }
       },
-      "description": "Quickstart API with Gin"
+      "description": "Quickstart API with Gin \r\n\r\n>> ./script/vscode-open-commit.sh ace9bccf2da83a4397b9f8f954940d0eca331c39"
     }
   ],
   "ref": "ace9bccf2da83a4397b9f8f954940d0eca331c39"

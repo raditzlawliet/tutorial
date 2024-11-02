@@ -42,7 +42,7 @@
           "character": 1
         }
       },
-      "description": "- Initialize auth handler\r\n- Create route group /auth\r\n- Create route /auth/login to authHandler.AuthLogin"
+      "description": "- Initialize auth handler\r\n- Create route group /auth\r\n- Create route /auth/login to authHandler.AuthLogin \r\n\r\n>> ./script/vscode-open-commit.sh f37d612b61f7a5811ce4d3d18e9dd6aa256fe1bb"
     }
   ],
   "ref": "f37d612b61f7a5811ce4d3d18e9dd6aa256fe1bb"
