@@ -14,6 +14,8 @@ type AccountInterface interface {
 	Update(*gin.Context)
 	Delete(*gin.Context)
 	List(*gin.Context)
+
+	My(*gin.Context)
 }
 
 type accountImplement struct {
@@ -165,5 +167,31 @@ func (a *accountImplement) List(c *gin.Context) {
 	// Success response
 	c.JSON(http.StatusOK, gin.H{
 		"data": accounts,
+	})
+}
+
+func (a *accountImplement) My(c *gin.Context) {
+	var account model.Account
+	// get account_id from middleware auth
+	accountID := c.GetInt64("account_id")
+
+	// Find first data based on account_id given
+	if err := a.db.First(&account, accountID).Error; err != nil {
+		if err == gorm.ErrRecordNotFound {
+			c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
+				"error": "Not found",
+			})
+			return
+		}
+
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
+
+	// Success response
+	c.JSON(http.StatusOK, gin.H{
+		"data": account,
 	})
 }

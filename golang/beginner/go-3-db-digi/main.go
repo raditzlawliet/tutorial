@@ -2,6 +2,7 @@ package main
 
 import (
 	"go-3-db-digi/handler"
+	"go-3-db-digi/middleware"
 	"log"
 	"os"
 
@@ -26,7 +27,16 @@ func main() {
 	}
 	defer sqlDB.Close()
 
+	// secret-key
+	signingKey := os.Getenv("SIGNING_KEY")
+
 	r := gin.Default()
+
+	// grouping route with /auth
+	authHandler := handler.NewAuth(db, []byte(signingKey))
+	authRoute := r.Group("/auth")
+	authRoute.POST("/login", authHandler.Login)
+	authRoute.POST("/upsert", authHandler.Upsert)
 
 	// grouping route with /account
 	accountHandler := handler.NewAccount(db)
@@ -36,6 +46,8 @@ func main() {
 	accountRoutes.PATCH("/update/:id", accountHandler.Update)
 	accountRoutes.DELETE("/delete/:id", accountHandler.Delete)
 	accountRoutes.GET("/list", accountHandler.List)
+
+	accountRoutes.GET("/my", middleware.AuthMiddleware(signingKey), accountHandler.My)
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
