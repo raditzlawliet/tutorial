@@ -30,7 +30,7 @@ func NewAuth(db *gorm.DB, signingKey []byte) pb.AuthServer {
 }
 
 func (a *authImplement) Login(c context.Context, req *pb.AuthLoginRequest) (*pb.AuthLoginResponse, error) {
-	// validate
+	// Get Auth
 	auth := model.Auth{}
 	if err := a.db.Where("username = ?", req.Username).
 		First(&auth).Error; err != nil {
@@ -41,24 +41,25 @@ func (a *authImplement) Login(c context.Context, req *pb.AuthLoginRequest) (*pb.
 		return nil, status.Error(codes.Internal, err.Error())
 	}
 
-	// validate
+	// Validate password
 	if err := bcrypt.CompareHashAndPassword([]byte(auth.Password), []byte(req.Password)); err != nil {
 		return nil, status.Error(codes.Unauthenticated, "Login not valid")
 	}
 
-	// login valid
+	// Login valid, create token
 	token, err := a.createJWT(&auth)
 	if err != nil {
 		return nil, status.Error(codes.Internal, err.Error())
 	}
 
+	// Success Response
 	return &pb.AuthLoginResponse{
 		Token: token,
 	}, nil
 }
 
 func (a *authImplement) Validate(c context.Context, req *pb.AuthValidateRequest) (*pb.AuthValidateResponse, error) {
-	// Parse the token
+	// Parse & Validate the token
 	token, err := jwt.Parse(req.Token, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, http.ErrAbortHandler
@@ -86,24 +87,25 @@ func (a *authImplement) Validate(c context.Context, req *pb.AuthValidateRequest)
 		return nil, status.Error(codes.Unauthenticated, "Unauthenticated")
 	}
 
+	// return success response
 	return response, nil
 }
 
 func (a *authImplement) Upsert(c context.Context, req *pb.AuthUpsertRequest) (*emptypb.Empty, error) {
-	// hash password
+	// Hash password
 	hashed, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return nil, status.Error(codes.InvalidArgument, err.Error())
 	}
 
-	// prepare auth data to save
+	// Prepare auth data to save
 	auth := model.Auth{
 		AccountID: req.AccountId,
 		Username:  req.Username,
 		Password:  string(hashed),
 	}
 
-	// upsert auth
+	// Upsert auth
 	result := a.db.Clauses(
 		clause.OnConflict{
 			DoUpdates: clause.AssignmentColumns([]string{"username", "password"}),
@@ -113,6 +115,7 @@ func (a *authImplement) Upsert(c context.Context, req *pb.AuthUpsertRequest) (*e
 		return nil, status.Error(codes.InvalidArgument, result.Error.Error())
 	}
 
+	// Success, return empty response with nil error
 	return &emptypb.Empty{}, nil
 }
 
@@ -127,10 +130,12 @@ func (a *authImplement) createJWT(auth *model.Auth) (string, error) {
 	claims["username"] = auth.Username
 	claims["exp"] = time.Now().Add(time.Hour * 72).Unix() // Token expires in 72 hours
 
-	// encode
+	// Encode
 	tokenString, err := token.SignedString(a.signingKey)
 	if err != nil {
 		return "", err
 	}
+
+	// return token string
 	return tokenString, nil
 }

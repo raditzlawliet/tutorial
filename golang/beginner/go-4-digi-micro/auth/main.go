@@ -41,7 +41,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	defer grpcServer.Stop()
 
-	// register server
+	// register auth server to grpc server
 	authServer := handler.NewAuth(db, []byte(signingKey))
 	pb.RegisterAuthServer(grpcServer, authServer)
 

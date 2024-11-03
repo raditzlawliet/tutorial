@@ -20,14 +20,12 @@ type AuthInterface interface {
 type authImplement struct {
 	authClient auth.AuthClient
 	db         *gorm.DB
-	signingKey []byte
 }
 
-func NewAuth(authClient auth.AuthClient, db *gorm.DB, signingKey []byte) AuthInterface {
+func NewAuth(authClient auth.AuthClient, db *gorm.DB) AuthInterface {
 	return &authImplement{
 		authClient,
 		db,
-		signingKey,
 	}
 }
 
@@ -54,7 +52,7 @@ func (a *authImplement) Login(c *gin.Context) {
 		Password: payload.Password,
 	}
 
-	// call auth service
+	// call auth service Login
 	res, err := a.authClient.Login(c, req)
 	if err != nil {
 		if e, ok := status.FromError(err); ok {
@@ -118,7 +116,7 @@ func (a *authImplement) Upsert(c *gin.Context) {
 		Password:  payload.Password,
 	}
 
-	// call auth service
+	// call auth service Upsert
 	_, err = a.authClient.Upsert(c, req)
 	if err != nil {
 		if e, ok := status.FromError(err); ok {

@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-func AuthMiddleware(authClient auth.AuthClient, secretKey string) gin.HandlerFunc {
+func AuthMiddleware(authClient auth.AuthClient) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		tokenString := c.GetHeader("Authorization")
 
@@ -18,7 +18,7 @@ func AuthMiddleware(authClient auth.AuthClient, secretKey string) gin.HandlerFun
 			Token: tokenString,
 		}
 
-		// call auth service
+		// call auth service - Validate
 		res, err := authClient.Validate(c, req)
 		if err != nil {
 			if e, ok := status.FromError(err); ok {
@@ -34,10 +34,11 @@ func AuthMiddleware(authClient auth.AuthClient, secretKey string) gin.HandlerFun
 			return
 		}
 
+		// Set the token claims to the context
 		c.Set("auth_id", res.AuthId)
 		c.Set("account_id", res.AccountId)
 		c.Set("username", res.Username)
 
-		c.Next() // Proceed to the next handler if authorized
+		c.Next() // Authorized, Proceed to the next handler
 	}
 }

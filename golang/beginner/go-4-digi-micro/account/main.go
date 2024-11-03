@@ -38,13 +38,10 @@ func main() {
 	defer conn.Close()
 	authClient := auth.NewAuthClient(conn)
 
-	// secret-key
-	signingKey := os.Getenv("SIGNING_KEY")
-
 	r := gin.Default()
 
 	// grouping route with /auth
-	authHandler := handler.NewAuth(authClient, db, []byte(signingKey))
+	authHandler := handler.NewAuth(authClient, db)
 	authRoute := r.Group("/auth")
 	authRoute.POST("/login", authHandler.Login)
 	authRoute.POST("/upsert", authHandler.Upsert)
@@ -58,7 +55,7 @@ func main() {
 	accountRoutes.DELETE("/delete/:id", accountHandler.Delete)
 	accountRoutes.GET("/list", accountHandler.List)
 
-	accountRoutes.GET("/my", middleware.AuthMiddleware(authClient, signingKey), accountHandler.My)
+	accountRoutes.GET("/my", middleware.AuthMiddleware(authClient), accountHandler.My)
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
