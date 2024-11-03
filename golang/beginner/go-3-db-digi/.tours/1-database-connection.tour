@@ -1,0 +1,77 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Database Connection",
+  "steps": [
+    {
+      "file": "db.sql",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 27,
+          "character": 3
+        }
+      },
+      "description": "## DDL Table"
+    },
+    {
+      "file": ".env",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 1,
+          "character": 100
+        }
+      },
+      "description": "## Prepare Connection Env"
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 1
+        },
+        "end": {
+          "line": 20,
+          "character": 1
+        }
+      },
+      "description": "## Load .env files"
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 43,
+          "character": 1
+        },
+        "end": {
+          "line": 66,
+          "character": 1
+        }
+      },
+      "description": "## New function create database connection with gorm.\r\n- #46 gorm.Open do open the database\r\n- #57 SELECT current_database() to check current connected database\r\n- #64 return gorm.DB, we will use this for connection"
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 20,
+          "character": 1
+        },
+        "end": {
+          "line": 27,
+          "character": 21
+        }
+      },
+      "description": "## Database Connection Ready\r\n- #27 Don't forget to close the connection after app exited using defer\r\n- Database connection ready to use!"
+    }
+  ],
+  "ref": "b0cf75c92be48315fa92ae2ba52abbe60088cb9e"
+}

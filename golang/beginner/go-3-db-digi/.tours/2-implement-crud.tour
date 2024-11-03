@@ -1,0 +1,103 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Implement CRUD",
+  "steps": [
+    {
+      "file": "model/account.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "## Create Account Model\r\n- Account model will represent Account data\r\n- `gorm:\"primaryKey;autoIncrement;<-:false\"` tell gorm that AccountID is a primary key and auto increment, so we don't need assign this when create. `<-:false` means it will ignore to update this property."
+    },
+    {
+      "file": "handler/account.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 28,
+          "character": 1
+        }
+      },
+      "description": "## Create Account interface to for implement handler\r\n- #11 will tell what handler will be implement\r\n- #21 we will have database connection here\r\n- #25 a factory to create a implement of handler"
+    },
+    {
+      "file": "handler/account.go",
+      "selection": {
+        "start": {
+          "line": 29,
+          "character": 1
+        },
+        "end": {
+          "line": 56,
+          "character": 1
+        }
+      },
+      "description": "## Handler `Create`"
+    },
+    {
+      "file": "handler/account.go",
+      "selection": {
+        "start": {
+          "line": 57,
+          "character": 1
+        },
+        "end": {
+          "line": 83,
+          "character": 1
+        }
+      },
+      "description": "## Handler `Update`\r\n- #63 We will using dynamic route e.g., account/read/:id to get :id\r\n\r\n",
+      "title": "Handler `Read`"
+    },
+    {
+      "file": "handler/account.go",
+      "selection": {
+        "start": {
+          "line": 84,
+          "character": 1
+        },
+        "end": {
+          "line": 125,
+          "character": 1
+        }
+      },
+      "description": "## Handler `Update`",
+      "title": "Handler `Update`"
+    },
+    {
+      "file": "handler/account.go",
+      "description": "## Update Save Action\r\n- We overwrite current data with payload \r\n- then we save updated model",
+      "line": 115
+    },
+    {
+      "file": "handler/account.go",
+      "selection": {
+        "start": {
+          "line": 125,
+          "character": 1
+        },
+        "end": {
+          "line": 152,
+          "character": 1
+        }
+      },
+      "description": "## Handler `Delete`\r\n- Always be careful when delete a data\r\n- #130 Indicate we will only delete after select by condition"
+    },
+    {
+      "file": "handler/account.go",
+      "description": "## Handler `List`\r\n- It will fetch all accounts data",
+      "line": 153
+    }
+  ],
+  "ref": "89ab997e40328f21e3dc8a3f7154632b848979fb"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "4. Validate Token",
+  "steps": [
+    {
+      "file": "middleware/auth.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 48,
+          "character": 1
+        }
+      },
+      "description": "## Create Auth Middleware\r\n- a middleware handler to validate given token is good.\r\n- #12 Token will be read in Header **Authorization**\r\n- #15 Parse and validate the token given\r\n- #22 Check token is valid\r\n- #29 Get the data from token like account_id, auth_id and username and set to gin context (that can be read by our next handler)\r\n- #45 Because the request is authorized, `c.Next()` will do process to the next handler"
+    },
+    {
+      "file": "handler/account.go",
+      "selection": {
+        "start": {
+          "line": 172,
+          "character": 1
+        },
+        "end": {
+          "line": 198,
+          "character": 1
+        }
+      },
+      "description": "## Test our middleware, Create `account/my` handler\r\n- It will return account data given `account_id`.\r\n- `account_id` will be given through auth middleware or token"
+    },
+    {
+      "file": "handler/account.go",
+      "description": "## Add `My` to AccountInterface",
+      "line": 18
+    },
+    {
+      "file": "main.go",
+      "description": "## Register `account/my` to our handler + our Auth Middleware\r\n- See the sequence, it will call middleware.AuthMiddleware first.\r\n- After authMiddleware is done or `c.Next()` called, it will call `accountHandler.My`",
+      "line": 50
+    }
+  ],
+  "ref": "d8e973b3123f84e824c384b572d097779bf00b33"
+}

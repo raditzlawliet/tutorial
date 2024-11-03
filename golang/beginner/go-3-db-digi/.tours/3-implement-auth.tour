@@ -1,0 +1,82 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Implement Auth",
+  "steps": [
+    {
+      "file": "model/auth.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 1
+        }
+      },
+      "description": "## Create Auth Model\r\n- To hold data auth from auths "
+    },
+    {
+      "file": "handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 32,
+          "character": 1
+        }
+      },
+      "description": "## Prepare Auth Handler\r\n- We will have /login and /upsert (for update the login information)\r\n- `db` same as Account, current database connection.\r\n- `signingKey`, a secret key for generate jwt token for our auth login. (jwt, https://jwt.io/introduction)\r\n  - Changing this key, means it will invalidate all our published token."
+    },
+    {
+      "file": "handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 161,
+          "character": 1
+        },
+        "end": {
+          "line": 182,
+          "character": 1
+        }
+      },
+      "description": "## Create func to create JWT token based on auth model and return token"
+    },
+    {
+      "file": "handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 32,
+          "character": 1
+        },
+        "end": {
+          "line": 91,
+          "character": 1
+        }
+      },
+      "description": "## Handler `login`\r\n- It will validate login based on username and password to our auths data\r\n- It also give token after login is valid"
+    },
+    {
+      "file": "handler/auth.go",
+      "description": "## Internal handler `upsert`\r\n- to create or update our auth data given account_id, username and password.\r\n- So if account_id already exists, it will overwrite username and password given.",
+      "line": 92
+    },
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 29,
+          "character": 1
+        },
+        "end": {
+          "line": 40,
+          "character": 1
+        }
+      },
+      "description": "## Register auth handler to route"
+    }
+  ],
+  "ref": "d8e973b3123f84e824c384b572d097779bf00b33"
+}
