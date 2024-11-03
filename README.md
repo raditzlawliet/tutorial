@@ -12,6 +12,9 @@ Some material and source code has Code Tour inside it. Please use [Code Tour Ext
 
 - Create API (with Gin) [>>](golang/beginner/go-2-api/)
 - Create API and Connect to Database (with Gin & GORM) [>>](golang/beginner/go-3-db-digi/)
+- Golang Communicating between services with gRPC [>>](golang/beginner/go-4-digi-micro/)
+
+\*[go.work](golang/go.work) is used to maintain multiple go mod in this repository
 
 ### Docker (Beginner)
 

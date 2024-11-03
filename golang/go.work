@@ -3,4 +3,6 @@ go 1.23.2
 use (
 	./beginner/go-2-api
 	./beginner/go-3-db-digi
+	./beginner/go-4-digi-micro/account
+	./beginner/go-4-digi-micro/auth
 )
