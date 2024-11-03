@@ -37,7 +37,7 @@
     },
     {
       "file": "main.go",
-      "description": "## Register `account/my` to our handler + our Auth Middleware\r\n- See the sequence, it will call middleware.AuthMiddleware first.\r\n- After authMiddleware is done or `c.Next()` called, it will call `accountHandler.My`",
+      "description": "## Register `account/my` to our handler + our Auth Middleware\r\n- See the sequence, it will call middleware.AuthMiddleware first.\r\n- After authMiddleware is done or `c.Next()` called, it will call `accountHandler.My` \r\n\r\n>> ./script/vscode-open-commit.sh d8e973b3123f84e824c384b572d097779bf00b33",
       "line": 50
     }
   ],

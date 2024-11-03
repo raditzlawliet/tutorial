@@ -40,7 +40,7 @@ services:
     container_name: vue_container
     # build with given Dockerfile
     build:
-      context: ./vue-sample/
+      context: ./vue_sample/
       dockerfile: Dockerfile
     # environment file
     env_file:

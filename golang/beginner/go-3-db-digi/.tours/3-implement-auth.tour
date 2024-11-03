@@ -61,7 +61,16 @@
     {
       "file": "handler/auth.go",
       "description": "## Internal handler `upsert`\r\n- to create or update our auth data given account_id, username and password.\r\n- So if account_id already exists, it will overwrite username and password given.",
-      "line": 92
+      "selection": {
+        "start": {
+          "line": 92,
+          "character": 1
+        },
+        "end": {
+          "line": 160,
+          "character": 1
+        }
+      }
     },
     {
       "file": "main.go",
@@ -75,7 +84,7 @@
           "character": 1
         }
       },
-      "description": "## Register auth handler to route"
+      "description": "## Register auth handler to route \r\n\r\n>> ./script/vscode-open-commit.sh d8e973b3123f84e824c384b572d097779bf00b33"
     }
   ],
   "ref": "d8e973b3123f84e824c384b572d097779bf00b33"

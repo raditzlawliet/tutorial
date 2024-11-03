@@ -10,7 +10,8 @@ Some material and source code has Code Tour inside it. Please use [Code Tour Ext
 
 ### Golang (Beginner)
 
-- Golang API (with Gin) [>>](golang/beginner/go-2-api/)
+- Create API (with Gin) [>>](golang/beginner/go-2-api/)
+- Create API and Connect to Database (with Gin & GORM) [>>](golang/beginner/go-3-db-digi/)
 
 ### Docker (Beginner)
 

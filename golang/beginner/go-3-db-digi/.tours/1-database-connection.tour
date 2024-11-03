@@ -70,7 +70,7 @@
           "character": 21
         }
       },
-      "description": "## Database Connection Ready\r\n- #27 Don't forget to close the connection after app exited using defer\r\n- Database connection ready to use!"
+      "description": "## Database Connection Ready\r\n- #27 Don't forget to close the connection after app exited using defer\r\n- Database connection ready to use!\r\n\r\n>> ./script/vscode-open-commit.sh b0cf75c92be48315fa92ae2ba52abbe60088cb9e"
     }
   ],
   "ref": "b0cf75c92be48315fa92ae2ba52abbe60088cb9e"

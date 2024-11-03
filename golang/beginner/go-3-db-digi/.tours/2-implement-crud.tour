@@ -95,8 +95,17 @@
     },
     {
       "file": "handler/account.go",
-      "description": "## Handler `List`\r\n- It will fetch all accounts data",
-      "line": 153
+      "selection": {
+        "start": {
+          "line": 153,
+          "character": 1
+        },
+        "end": {
+          "line": 170,
+          "character": 1
+        }
+      },
+      "description": "## Handler `List`\r\n- It will fetch all accounts data \r\n\r\n>> ./script/vscode-open-commit.sh 89ab997e40328f21e3dc8a3f7154632b848979fb"
     }
   ],
   "ref": "89ab997e40328f21e3dc8a3f7154632b848979fb"
