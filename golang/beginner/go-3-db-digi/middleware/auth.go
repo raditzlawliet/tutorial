@@ -42,6 +42,6 @@ func AuthMiddleware(secretKey string) gin.HandlerFunc {
 			return
 		}
 
-		c.Next() // Proceed to the next handler if authorized
+		c.Next() // Authorized, Proceed to the next handler
 	}
 }

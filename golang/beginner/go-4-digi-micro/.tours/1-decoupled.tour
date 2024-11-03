@@ -1,0 +1,15 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Decoupled",
+  "steps": [
+    {
+      "directory": "account",
+      "description": "### Account Service will handle all account related and act as API Gateway"
+    },
+    {
+      "directory": "auth",
+      "description": "### Auth Service will handle auth related"
+    }
+  ],
+  "ref": "fac2dace8889c8dc0b7beee290c6b659b585960d"
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Prepare Account Service",
+  "steps": [
+    {
+      "file": "account/model/account.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### Prepare Account Model",
+      "title": "Prepare Account Model"
+    },
+    {
+      "file": "account/handler/account.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 198,
+          "character": 1
+        }
+      },
+      "description": "### Implement Account CRUD\r\nIt's similar with previous material `go-3-db-digi`"
+    },
+    {
+      "file": "account/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 32,
+          "character": 1
+        }
+      },
+      "description": "### [New] Auth Handler only act as API and call Auth Service\r\n- #21 We add auth.AuthClient implement, it similar with database connection, but connect to our Auth Service.\r\n- We also remove singingKey, since we don't generate token here."
+    },
+    {
+      "file": "account/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 49,
+          "character": 1
+        },
+        "end": {
+          "line": 70,
+          "character": 1
+        }
+      },
+      "description": "### Implement Login Handler and call to Auth Service\r\n- #50 Prepare the data we want to pass to Auth Service - Login\r\n- #56 We call Auth Service - Login\r\n- #57-58 Check error, if something error from the request, we return JSON to our client\r\n- Success response will be available on `res` variable and we can use it like usual"
+    },
+    {
+      "file": "account/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 84,
+          "character": 1
+        },
+        "end": {
+          "line": 139,
+          "character": 1
+        }
+      },
+      "description": "### Implement Upsert Handler\r\n- #97 Validate account id is valid\r\n- #113 Prepare the data before calling Auth Service - Upsert\r\n- #120 Calling Auth/Upsert, Since we don't need response, we can ignore with `_`\r\n- #121-131 Check error Auth/Upsert action\r\n- #134 No error, Return Success response"
+    },
+    {
+      "file": "account/middleware/auth.go",
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 1
+        },
+        "end": {
+          "line": 42,
+          "character": 1
+        }
+      },
+      "description": "### Update Middleware Auth\r\n- Previous we validate token here, but now we call Auth Service to validate.\r\n- #17 Prepare the request for validating\r\n- #22 Call Auth/Validate and check the error\r\n- #38 No error, move and set Auth/Validate response to gin.Context (c)\r\n- #42 Continue to next handler"
+    },
+    {
+      "file": "account/main.go",
+      "description": "### main.go Prepare Database Connection",
+      "line": 62
+    },
+    {
+      "file": "account/main.go",
+      "selection": {
+        "start": {
+          "line": 19,
+          "character": 1
+        },
+        "end": {
+          "line": 23,
+          "character": 3
+        }
+      },
+      "description": "### main.go Env\r\n"
+    },
+    {
+      "file": "account/main.go",
+      "selection": {
+        "start": {
+          "line": 25,
+          "character": 1
+        },
+        "end": {
+          "line": 31,
+          "character": 21
+        }
+      },
+      "description": "### main.go Open Connection to Account Database"
+    },
+    {
+      "file": "account/main.go",
+      "selection": {
+        "start": {
+          "line": 32,
+          "character": 1
+        },
+        "end": {
+          "line": 41,
+          "character": 1
+        }
+      },
+      "description": "### [New] main.go Prepare gRPC Auth Service Connection"
+    },
+    {
+      "file": "account/main.go",
+      "selection": {
+        "start": {
+          "line": 40,
+          "character": 1
+        },
+        "end": {
+          "line": 60,
+          "character": 1
+        }
+      },
+      "description": "### main.go Register REST API handlers"
+    },
+    {
+      "file": "account/main.go",
+      "description": "### main.go We pass Auth Service Connection to Auth Handler",
+      "line": 44
+    },
+    {
+      "file": "account/main.go",
+      "description": "### main.go http serve",
+      "line": 60
+    }
+  ],
+  "ref": "fac2dace8889c8dc0b7beee290c6b659b585960d"
+}

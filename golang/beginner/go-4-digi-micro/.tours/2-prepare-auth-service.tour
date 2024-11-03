@@ -1,0 +1,222 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Prepare Auth Service",
+  "steps": [
+    {
+      "file": "auth/proto/auth.proto",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 39,
+          "character": 1
+        }
+      },
+      "description": "### Create auth.proto\r\n- This will be implement in our auth service. Auth will have Login, Upsert and Validate.\r\n- `Login` for validate username & password, then generate token\r\n- `Upsert` for updating auth login\r\n- `Validate` for validating token\r\n- All of them will be Unary rpc (single request, single response)\r\n- All of them have their request and response.\r\n- Since `Upsert` have empty response, we can use `google.protobuf.Empty` and `import \"google/protobuf/empty.proto\";` (or create empty Message)\r\n- `package auth;` is identifier for proto package\r\n- `option go_package = \"./proto;auth\";` tell generator to create golang proto file in `proto` folder with package `auth`\r\n\r\nYou can generate proto with:\r\n```sh\r\ncd auth\r\nprotoc --go_out=. --go_opt=paths=source_relative \\\r\n    --go-grpc_out=. --go-grpc_opt=paths=source_relative \\\r\n    proto/*.proto\r\n```\r\n\r\n"
+    },
+    {
+      "file": "auth/model/auth.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 1
+        }
+      },
+      "description": "### Create Auth Model (Or copy from go-3-digi-db)"
+    },
+    {
+      "file": "auth/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 19,
+          "character": 1
+        },
+        "end": {
+          "line": 31,
+          "character": 1
+        }
+      },
+      "description": "### Prepare to Implement AuthServer\r\n- Generated proto already has their interface and we need to implement from them -> Therefore, we just need to create struct and implement their interface\r\n- `pb.AuthServer` we just need to return their proto generated `AuthServer` interface"
+    },
+    {
+      "file": "auth/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 119,
+          "character": 1
+        },
+        "end": {
+          "line": 137,
+          "character": 1
+        }
+      },
+      "description": "### Create JWT helper\r\n- This similar with previous material\r\n- We generate token with this helper"
+    },
+    {
+      "file": "auth/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 32,
+          "character": 1
+        },
+        "end": {
+          "line": 59,
+          "character": 1
+        }
+      },
+      "description": "### Implement Auth/Login rpc handler\r\n- The only different with API is, we need to return a Response.\r\n- gRPC has their own error status and codes. For failed process, we can use them for our failed process like \r\n```go \r\nstatus.Error(codes.Unauthenticated, \"Login not valid\")\r\n```\r\n- See https://grpc.io/docs/guides/status-codes/ \r\n- When token is success created, we can return it\r\n```go\r\n\treturn &pb.AuthLoginResponse{\r\n\t\tToken: token,\r\n\t}, nil\r\n```\r\n\r\n#### Tips!\r\n- Success Process return Response, Failed Process return error\r\n"
+    },
+    {
+      "file": "auth/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 60,
+          "character": 1
+        },
+        "end": {
+          "line": 92,
+          "character": 1
+        }
+      },
+      "description": "### Implement Auth/Validate rpc handler\r\n- We move the process to validate token from **middleware/auth.go** in **go-3-db-digi** to this handler\r\n- #75 Assign data from token like account_id, auth_id and username to Response Struct\r\n- #86 Like before, invalid request will return an error\r\n- #89 and success request, will return valid response"
+    },
+    {
+      "file": "auth/handler/auth.go",
+      "selection": {
+        "start": {
+          "line": 92,
+          "character": 1
+        },
+        "end": {
+          "line": 119,
+          "character": 1
+        }
+      },
+      "description": "### Implement Auth/Upsert rpc handler\r\n- Handle upsert here with given data from request.\r\n- Since Auth/Upsert only called by Account Service, we don't need validate the account_id. Also Auth Service only manages authorization."
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 77,
+          "character": 1
+        }
+      },
+      "description": "### Implement main for Auth\r\n- Similar like previous"
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 17,
+          "character": 1
+        },
+        "end": {
+          "line": 21,
+          "character": 3
+        }
+      },
+      "description": "### main.go read env"
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 54,
+          "character": 1
+        },
+        "end": {
+          "line": 77,
+          "character": 1
+        }
+      },
+      "description": "### main.go Helper to provide database connection"
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 23,
+          "character": 1
+        },
+        "end": {
+          "line": 30,
+          "character": 1
+        }
+      },
+      "description": "### main.go Connect to database"
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 31,
+          "character": 1
+        },
+        "end": {
+          "line": 34,
+          "character": 1
+        }
+      },
+      "description": "### main.go secret-key for jwt"
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 34,
+          "character": 1
+        },
+        "end": {
+          "line": 44,
+          "character": 1
+        }
+      },
+      "description": "### [New] main.go Create gRPC server to listening GRPC_PORT (Usually 50051)"
+    },
+    {
+      "file": "auth/main.go",
+      "description": "### main.go prepare gRPC Server (not started and registered yet)",
+      "line": 41
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 44,
+          "character": 1
+        },
+        "end": {
+          "line": 48,
+          "character": 1
+        }
+      },
+      "description": "### main.go Register our auth handler to grpcServer"
+    },
+    {
+      "file": "auth/main.go",
+      "selection": {
+        "start": {
+          "line": 48,
+          "character": 1
+        },
+        "end": {
+          "line": 52,
+          "character": 1
+        }
+      },
+      "description": "### main.go Serve!"
+    }
+  ],
+  "ref": "fac2dace8889c8dc0b7beee290c6b659b585960d"
+}
