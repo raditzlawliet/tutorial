@@ -38,7 +38,7 @@ type authLoginPayload struct {
 func (a *authImplement) Login(c *gin.Context) {
 	payload := authLoginPayload{}
 
-	// parsing payload to struct
+	// parsing JSON payload to struct model
 	err := c.BindJSON(&payload)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
@@ -47,7 +47,7 @@ func (a *authImplement) Login(c *gin.Context) {
 		return
 	}
 
-	// validate
+	// Validate username to get auth data
 	auth := model.Auth{}
 	if err := a.db.Where("username = ?",
 		payload.Username).
@@ -65,7 +65,7 @@ func (a *authImplement) Login(c *gin.Context) {
 		return
 	}
 
-	// validate
+	// Validate password
 	if err := bcrypt.CompareHashAndPassword([]byte(auth.Password), []byte(payload.Password)); err != nil {
 		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
 			"error": "Login not valid",
@@ -73,7 +73,7 @@ func (a *authImplement) Login(c *gin.Context) {
 		return
 	}
 
-	// login valid
+	// Login is valid
 	token, err := a.createJWT(&auth)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
@@ -82,7 +82,7 @@ func (a *authImplement) Login(c *gin.Context) {
 		return
 	}
 
-	// response
+	// Success response
 	c.JSON(http.StatusOK, gin.H{
 		"message": fmt.Sprintf("%v Login Sukses", payload.Username),
 		"data":    token,
@@ -98,7 +98,7 @@ type authUpsertPayload struct {
 func (a *authImplement) Upsert(c *gin.Context) {
 	payload := authUpsertPayload{}
 
-	// parsing payload to struct
+	// parsing JSON payload to struct model
 	err := c.BindJSON(&payload)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
@@ -107,7 +107,7 @@ func (a *authImplement) Upsert(c *gin.Context) {
 		return
 	}
 
-	// hash password
+	// Hash Given Password
 	hashed, err := bcrypt.GenerateFromPassword([]byte(payload.Password), bcrypt.DefaultCost)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
@@ -116,7 +116,7 @@ func (a *authImplement) Upsert(c *gin.Context) {
 		return
 	}
 
-	// check AccountID is valid
+	// Check AccountID is valid
 	var account model.Account
 	if err := a.db.First(&account, payload.AccountID).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
@@ -132,14 +132,14 @@ func (a *authImplement) Upsert(c *gin.Context) {
 		return
 	}
 
-	// prepare auth data to save
+	// Prepare new auth data with new password
 	auth := model.Auth{
 		AccountID: payload.AccountID,
 		Username:  payload.Username,
 		Password:  string(hashed),
 	}
 
-	// upsert auth
+	// Upsert auth data (Insert or Update if already exists)
 	result := a.db.Clauses(
 		clause.OnConflict{
 			DoUpdates: clause.AssignmentColumns([]string{"username", "password"}),
@@ -152,7 +152,7 @@ func (a *authImplement) Upsert(c *gin.Context) {
 		return
 	}
 
-	// success response
+	// Success response
 	c.JSON(http.StatusOK, gin.H{
 		"message": "Create success",
 		"data":    payload.Username,
@@ -160,20 +160,22 @@ func (a *authImplement) Upsert(c *gin.Context) {
 }
 
 func (a *authImplement) createJWT(auth *model.Auth) (string, error) {
-	// Create the token
+	// Create the jwt token signer
 	token := jwt.New(jwt.SigningMethodHS256)
 
-	// Set claims
+	// Add claims data or additional data (avoid to put secret information in the payload or header elements)
 	claims := token.Claims.(jwt.MapClaims)
 	claims["auth_id"] = auth.AuthID
 	claims["account_id"] = auth.AccountID
 	claims["username"] = auth.Username
 	claims["exp"] = time.Now().Add(time.Hour * 72).Unix() // Token expires in 72 hours
 
-	// encode
+	// Encode
 	tokenString, err := token.SignedString(a.signingKey)
 	if err != nil {
 		return "", err
 	}
+
+	// Return the token
 	return tokenString, nil
 }
