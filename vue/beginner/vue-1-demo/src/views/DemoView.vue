@@ -7,6 +7,7 @@ import MyTodoListPlain from '../components/Demo/MyTodoListPlain.vue'
 import MyAttrBinding from '../components/Demo/MyAttrBinding.vue'
 import MyForm from '../components/Demo/MyForm.vue'
 import MyCounterPinia from '@/components/Demo/MyCounterPinia.vue'
+import MyCounterPiniaLocalStorage from '@/components/Demo/MyCounterPiniaLocalStorage.vue'
 </script>
 
 <template>
@@ -51,5 +52,9 @@ import MyCounterPinia from '@/components/Demo/MyCounterPinia.vue'
     <hr />
     <MyCounterPinia />
     <MyCounterPinia />
+
+    <hr />
+    <MyCounterPiniaLocalStorage />
+    <MyCounterPiniaLocalStorage />
   </main>
 </template>
