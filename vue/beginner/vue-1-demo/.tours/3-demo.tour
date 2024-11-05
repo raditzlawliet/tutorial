@@ -1,0 +1,180 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3. Demo",
+  "steps": [
+    {
+      "file": "src/components/Demo/MyHelloWorld.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 10,
+          "character": 1
+        }
+      },
+      "description": "### Basic Component Hello World\r\n "
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "description": "### How to use Component Hello World",
+      "line": 37
+    },
+    {
+      "file": "src/components/Demo/MyCounter.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### My First Component"
+    },
+    {
+      "file": "src/components/Demo/MyCounterSlot.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 20,
+          "character": 1
+        }
+      },
+      "description": "### Component with Slot\r\n- + Reactive"
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "selection": {
+        "start": {
+          "line": 14,
+          "character": 1
+        },
+        "end": {
+          "line": 25,
+          "character": 21
+        }
+      },
+      "description": "### How to use component"
+    },
+    {
+      "file": "src/components/Demo/MyTodoListPlain.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 22,
+          "character": 1
+        }
+      },
+      "description": "### v-for / loop / List rendering\r\n\r\nhttps://vuejs.org/guide/essentials/list"
+    },
+    {
+      "file": "src/components/Demo/MyTodoList.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 27,
+          "character": 1
+        }
+      },
+      "description": "### List rendering with Component"
+    },
+    {
+      "file": "src/components/Demo/MyTodoItem.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 13,
+          "character": 1
+        }
+      },
+      "description": "### Pass Component to use"
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "selection": {
+        "start": {
+          "line": 38,
+          "character": 1
+        },
+        "end": {
+          "line": 43,
+          "character": 24
+        }
+      },
+      "description": "### Example Result of v-for"
+    },
+    {
+      "file": "src/components/Demo/MyAttrBinding.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 41,
+          "character": 1
+        }
+      },
+      "description": "### Attribute Bindings"
+    },
+    {
+      "file": "src/components/Demo/MyForm.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 47,
+          "character": 1
+        }
+      },
+      "description": "### Example Form"
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "description": "### Result Example Attribute Bindings and Form",
+      "line": 44
+    },
+    {
+      "file": "src/stores/counter.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 13,
+          "character": 1
+        }
+      },
+      "description": "### Introduction Pinia\r\nhttps://pinia.vuejs.org/\r\n"
+    },
+    {
+      "file": "src/components/Demo/MyCounterPinia.vue",
+      "description": "### Example of use counter with Pinia Store "
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "description": "### See the Pinia result!",
+      "line": 51
+    }
+  ],
+  "ref": "fd376e3d040d0cdf9fa1b21ccdc9c43beac7db53"
+}

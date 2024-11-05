@@ -1,0 +1,50 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Edit Existing Component",
+  "steps": [
+    {
+      "file": "src/App.vue",
+      "description": "### You can try to change this message and see\r\n- This is props, you can pass data to HelloWorld component\r\n\r\nhttps://vuejs.org/guide/components/props",
+      "line": 11
+    },
+    {
+      "file": "src/components/HelloWorld.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 15,
+          "character": 12
+        }
+      },
+      "description": "### How Component and Props pass"
+    },
+    {
+      "file": "src/components/HelloWorld.vue",
+      "description": "### Change this message directly inside the Component and see the different",
+      "line": 13
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 6,
+          "character": 1
+        }
+      },
+      "description": "### Create a new View (Copy from Home)"
+    },
+    {
+      "file": "src/router/index.js",
+      "description": "### Register to route, so we can access from /demo\r\n- See the Component, it means, /demo will show DemoView",
+      "line": 21
+    }
+  ],
+  "ref": "164e2e2208dc52cd58f71bada7d2892c3fac1648"
+}

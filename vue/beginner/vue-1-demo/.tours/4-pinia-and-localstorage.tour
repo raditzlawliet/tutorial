@@ -1,0 +1,40 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "4. Pinia and LocalStorage",
+  "steps": [
+    {
+      "file": "src/stores/counterLocalStorage.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "### Pinia & LocalStorage\r\n- see localStorage.getItem and localStorage.setItem"
+    },
+    {
+      "file": "src/components/Demo/MyCounterPiniaLocalStorage.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 13,
+          "character": 1
+        }
+      },
+      "description": "### Implement in Component"
+    },
+    {
+      "file": "src/views/DemoView.vue",
+      "description": "### See the different!\r\n- Don't forget to refresh after click",
+      "line": 56
+    }
+  ],
+  "ref": "36fee9dcfae9d36aa8e44529b14e6b51ed46f9a1"
+}

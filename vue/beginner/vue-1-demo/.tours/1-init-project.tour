@@ -1,0 +1,25 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Init Project",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "### Create project using\r\n\r\n```sh\r\nnpm create vue@latest\r\n\r\n# assume your project is vue-project\r\ncd vue-project\r\n\r\nnpm install\r\nnpm run format\r\n\r\n# run vue project\r\nnpm run dev\r\n```"
+    },
+    {
+      "file": "src/main.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 15,
+          "character": 1
+        }
+      },
+      "description": "## Everything start from here"
+    }
+  ],
+  "ref": "7cbeae4b21b4ad9263e3241a5b65e82d5fc519e6"
+}
