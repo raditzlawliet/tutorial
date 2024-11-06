@@ -2,17 +2,39 @@
 import { ref } from 'vue'
 import { mdiAccountOutline, mdiLockOutline, mdiEye, mdiEyeOff } from '@mdi/js'
 import logo from '@/assets/logo-digi.png'
+import { useUserStore } from '@/stores/user.js'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const userStore = useUserStore()
 
 const username = ref('')
 const password = ref('')
+const submitErr = ref('') // error message
 
 const showPassword = ref(false)
+const submitInProgress = ref(false) // submit loading state
 
 async function submit() {
-  router.push({ name: 'home' })
+  submitInProgress.value = true
+  submitErr.value = ''
+
+  try {
+    await userStore.login({
+      username: username.value,
+      password: password.value,
+    })
+    // success
+    router.push({ name: 'home' })
+  } catch (err) {
+    if (err.response) {
+      submitErr.value = err.response.data.error
+    } else {
+      submitErr.value = err
+    }
+  }
+
+  submitInProgress.value = false
 }
 </script>
 <template>
@@ -56,7 +78,22 @@ async function submit() {
             </v-card-text>
           </v-card>
 
-          <v-btn color="primary" size="large" variant="tonal" block @click="submit"> Login </v-btn>
+          <v-card class="mb-5" color="error" variant="tonal" v-show="submitErr">
+            <v-card-text class="text-medium-emphasis text-caption text-center">
+              {{ submitErr }}
+            </v-card-text>
+          </v-card>
+
+          <v-btn
+            color="primary"
+            size="large"
+            variant="tonal"
+            block
+            @click="submit"
+            :readonly="submitInProgress"
+          >
+            Login
+          </v-btn>
         </v-card>
       </v-form>
     </div>
