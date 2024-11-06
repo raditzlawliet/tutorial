@@ -1,0 +1,97 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "4. Create Home Layout",
+  "steps": [
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 65,
+          "character": 1
+        }
+      },
+      "description": "### Create HomeLayout\r\n- This use baseline wireframe + inbox sidebar wireframe from vuetify https://vuetifyjs.com/en/getting-started/wireframes/#examples\r\n- You can modify or use anothers"
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "description": "### Import logo ",
+      "line": 48
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "description": "### Implement logo",
+      "line": 34
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "description": "### Create Sidebar links data",
+      "line": 60
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 13,
+          "character": 1
+        },
+        "end": {
+          "line": 29,
+          "character": 18
+        }
+      },
+      "description": "### Render sidebar links data with v-for\r\n- Use <RouteLink> **custom** to make href or link ourself"
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "description": "### v-list-item also has :to=\"\" route\r\n- You can use v-list-item :to=\"\" to create route link",
+      "line": 27
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 20,
+          "character": 1
+        },
+        "end": {
+          "line": 27,
+          "character": 99
+        }
+      },
+      "description": "### using v-if to render spesific item\r\n- If sidebar links has \"click\" data, it will render v-list-item with @click\r\n- otherwise, it will render v-list-item with :to=\"route\""
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 50,
+          "character": 1
+        },
+        "end": {
+          "line": 52,
+          "character": 27
+        }
+      },
+      "description": "### To use navigate via script, you can use useRouter"
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 56,
+          "character": 1
+        },
+        "end": {
+          "line": 58,
+          "character": 2
+        }
+      },
+      "description": "### Example when logout button clicked, it will run function logout() and navigate to \"login\""
+    }
+  ],
+  "ref": "698b6877352c420cdfe40253a65a1d85204091d8"
+}

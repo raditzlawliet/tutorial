@@ -1,0 +1,229 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5. Add Axios, Implement User Store and Implement Login",
+  "steps": [
+    {
+      "file": "src/plugins/api.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 24,
+          "character": 1
+        }
+      },
+      "description": "### Install and Prepare axios wrapper for api\r\n- Install axios by\r\n```\r\nnpm i axios\r\n```"
+    },
+    {
+      "file": "src/plugins/api.js",
+      "description": "### Create axios instance and add baseURL to our backend API",
+      "line": 3
+    },
+    {
+      "file": "src/plugins/api.js",
+      "description": "### Export default, so we just need to import api (which is wrap axios)",
+      "line": 23
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 73,
+          "character": 1
+        }
+      },
+      "description": "### Create user stores for handling and store user auth"
+    },
+    {
+      "file": "src/stores/user.js",
+      "description": "### We will use pinia, and we also will use api (axios wrapper)",
+      "line": 2
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 1
+        },
+        "end": {
+          "line": 8,
+          "character": 63
+        }
+      },
+      "description": "### Add token and storedUser state\r\n- token will hold JWT token\r\n- storedUser will hold json of user"
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 5
+        }
+      },
+      "description": "### Add user getter\r\n- it will return deserialized json of storedUser (which means an js object)"
+    },
+    {
+      "file": "src/stores/user.js",
+      "description": "### Add isAuthorized getter to check this session is authorized or not by checking token is valid or not",
+      "line": 18
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 20,
+          "character": 1
+        },
+        "end": {
+          "line": 27,
+          "character": 1
+        }
+      },
+      "description": "### function storeToken to update token state and store token into localStorage"
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 1
+        },
+        "end": {
+          "line": 34,
+          "character": 7
+        }
+      },
+      "description": "### function storeUser, same with storeToken but for user. \r\n- Also it has stringify user object to json string\r\n- Assume the json data looks like this \r\n```json\r\n{\"data\":{\"account_id\":11,\"name\":\"Nilouu\"}}\r\n```"
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 36,
+          "character": 1
+        },
+        "end": {
+          "line": 49,
+          "character": 4
+        }
+      },
+      "description": "### login()\r\n- given username & password it will call auth/login using api or axios wrapper\r\n- store using storeToken\r\n- call account/my to get account information\r\n- store using storeUser "
+    },
+    {
+      "file": "src/stores/user.js",
+      "selection": {
+        "start": {
+          "line": 51,
+          "character": 1
+        },
+        "end": {
+          "line": 59,
+          "character": 4
+        }
+      },
+      "description": "### logout(), clear all stored token and stored user\r\n"
+    },
+    {
+      "file": "src/views/LoginView.vue",
+      "selection": {
+        "start": {
+          "line": 5,
+          "character": 1
+        },
+        "end": {
+          "line": 9,
+          "character": 33
+        }
+      },
+      "description": "### Import UserStore pinia",
+      "title": "LoginView: import UserStore pinia"
+    },
+    {
+      "file": "src/views/LoginView.vue",
+      "selection": {
+        "start": {
+          "line": 81,
+          "character": 1
+        },
+        "end": {
+          "line": 85,
+          "character": 20
+        }
+      },
+      "description": "### LoginView: display error login()"
+    },
+    {
+      "file": "src/views/LoginView.vue",
+      "selection": {
+        "start": {
+          "line": 11,
+          "character": 1
+        },
+        "end": {
+          "line": 16,
+          "character": 60
+        }
+      },
+      "description": "### LoginView: Prepare error message and loading state variable"
+    },
+    {
+      "file": "src/views/LoginView.vue",
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 1
+        },
+        "end": {
+          "line": 39,
+          "character": 1
+        }
+      },
+      "description": "### LoginiView: update submit() now call userStore.login()"
+    },
+    {
+      "file": "src/views/LoginView.vue",
+      "selection": {
+        "start": {
+          "line": 87,
+          "character": 1
+        },
+        "end": {
+          "line": 96,
+          "character": 19
+        }
+      },
+      "description": "### LoginView: update button with loading state submitInProgress"
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 51,
+          "character": 1
+        },
+        "end": {
+          "line": 63,
+          "character": 1
+        }
+      },
+      "description": "### HomeLayout: Update logout() now call userStore.logout()"
+    },
+    {
+      "file": "src/views/LoginView.vue",
+      "description": "### Done\r\n- now you can try.\r\n- Login Submit will call API auth/login\r\n- Success condition, it will store token and continue to call account/my and store the user information. Finally it will navigate to Home\r\n- Failed condition, it will show error message",
+      "line": 103
+    }
+  ],
+  "ref": "43cfb33cdf2060ac01303b68307d622a18799852"
+}
