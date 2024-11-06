@@ -1,0 +1,67 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. Prepare Project",
+  "steps": [
+    {
+      "file": "src/main.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 33,
+          "character": 16
+        }
+      },
+      "description": "### Prepare Vue project and install Vuetify + Mdi\r\n- Install vuetify and mdi icons with script below:\r\n```sh\r\n# Vue\r\nnpm create vue@latest\r\n# Vuetify\r\nnpm i vuetify\r\n# Material Design Icon\r\nnpm install @mdi/js -D\r\n```\r\n- Turn off scaffolding styles from vue (Line #1)"
+    },
+    {
+      "file": "src/App.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 12,
+          "character": 1
+        }
+      },
+      "description": "### Cleanup App.vue\r\n- Cleanup scaffolding App.vue and leave RouterView\r\n- We will start from little clean to create the structure"
+    },
+    {
+      "file": "src/views/HomeView.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### Cleanup views\r\n- (optional) Remove other views except HomeView\r\n- Cleanup HomeView.vue, just leave some h1 and v-btn to check vuetify is correctly installed"
+    },
+    {
+      "directory": "src/components",
+      "description": "### (Optional) Cleanup Components if necessary, since we don't use it anymore"
+    },
+    {
+      "file": "src/router/index.js",
+      "selection": {
+        "start": {
+          "line": 4,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "### Cleanup routes\r\n- (Optional) If you remove the AboutView, you also need to remove route to AboutView (or iit will throw error)"
+    }
+  ],
+  "ref": "fae2858cbe2c3c1c4fe226f6793ace1ab961ae60"
+}

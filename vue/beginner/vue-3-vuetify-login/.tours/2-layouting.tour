@@ -1,0 +1,72 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Layouting",
+  "steps": [
+    {
+      "file": "src/views/LoginView.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 10,
+          "character": 1
+        }
+      },
+      "description": "### Create LoginView.vue\r\n- same as HomeView.vue but has different text"
+    },
+    {
+      "directory": "src/views/layouts",
+      "description": "### Create views/layouts folder for layout collections"
+    },
+    {
+      "file": "src/views/layouts/HomeLayout.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 12,
+          "character": 1
+        }
+      },
+      "description": "### Create HomeLayout\r\n- Just wireframe a layout with v-responsive, v-app and v-main\r\n- Add RouterView (view component will be renderer here)"
+    },
+    {
+      "file": "src/views/layouts/LoginLayout.vue",
+      "description": "### Create LoginLayout\r\n- Same with HomeLayout, just wireframe\r\n- Add some different from LoginLayout. e.g., We will add blue background for LoginLayout",
+      "line": 1
+    },
+    {
+      "file": "src/router/index.js",
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 22,
+          "character": 5
+        }
+      },
+      "description": "### Update router\r\n- Create 2 route, \r\n- \"/\" for \"home\", add **meta: { layout: HomeLayout }**, a information this home route will use HomeLayout\r\n- \"/login\" for \"login\", add **meta: { layout: LoginiLayout }**, a information this home route will use LoginLayout\r\n"
+    },
+    {
+      "file": "src/App.vue",
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 1
+        },
+        "end": {
+          "line": 8,
+          "character": 15
+        }
+      },
+      "description": "### Implement meta.layout in App.vue\r\n- Update your App.vue, add <component> and :is\r\n- it will render a <component> based on $route.meta.layout\r\n- e.g., in \"home\", <component> will replaced with <HomeLayout>\r\n\r\n- Then, try to see the result in \"/\" and \"/login\""
+    }
+  ],
+  "ref": "cfb8713d45926b105b745f513df3ceebd4868b2e"
+}
