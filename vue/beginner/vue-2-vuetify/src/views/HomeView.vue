@@ -1,5 +1,5 @@
 <script setup>
-import { mdiExcavator, mdiCheckCircle, mdiPartyPopper } from '@mdi/js'
+import { mdiExcavator } from '@mdi/js'
 import { ref } from 'vue'
 
 const showDialog = ref(false)
