@@ -24,7 +24,7 @@
           "character": 1
         }
       },
-      "description": "### Let's Try\r\n- Tara, Now you can try to use vuetify like v-btn, v-dialog and other vuetify components (and also, material design icons!)\r\n- Icon is using JS SVG, so you need to import one-by-one. ref: https://vuetifyjs.com/en/features/icon-fonts/#mdi-js-svg"
+      "description": "### Let's Try\r\n- Tara, Now you can try to use vuetify like v-btn, v-dialog and other vuetify components (and also, material design icons!)\r\n- Icon is using JS SVG, so you need to import one-by-one. ref: https://vuetifyjs.com/en/features/icon-fonts/#mdi-js-svg \r\n\r\n>> ./.tours/vscode-open-commit.sh e793725a47703f0be0cacb40d52dd600ef68bc7e"
     }
   ],
   "ref": "e793725a47703f0be0cacb40d52dd600ef68bc7e"

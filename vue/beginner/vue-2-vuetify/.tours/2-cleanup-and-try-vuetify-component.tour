@@ -1,0 +1,44 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Cleanup and Try Vuetify Component",
+  "steps": [
+    {
+      "file": "src/main.js",
+      "description": "### Disable vue scaffolding styles ",
+      "line": 1
+    },
+    {
+      "file": "src/App.vue",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "### Remove scoped style in App.vue\r\n- (optional) add v-responsive and v-app for vuetify wireframe\r\n- Just leave the <RouterView>, since we will use this for showing HomeView component "
+    },
+    {
+      "directory": "src/components/example",
+      "description": "### Add some sample from vuetify web and put to component\r\n- All of this are from vuetify web\r\n- CardReveal.vue : https://vuetifyjs.com/en/components/cards/#card-reveal\r\n- LoginForm.vue : https://vuetifyjs.com/en/components/text-fields/#login-form\r\n- TheBadge.vue : https://vuetifyjs.com/en/components/chips/#icon"
+    },
+    {
+      "file": "src/views/HomeView.vue",
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 1
+        },
+        "end": {
+          "line": 26,
+          "character": 17
+        }
+      },
+      "description": "### Let's try add to HomeView\r\n- and see the action!\r\n\r\n>> ./.tours/vscode-open-commit.sh 9be135fe2a479e37c4faa89f29a5aa803e4ca370"
+    }
+  ],
+  "ref": "9be135fe2a479e37c4faa89f29a5aa803e4ca370"
+}
