@@ -5,7 +5,7 @@ const store = useCounterLocalStorageStore()
 </script>
 
 <template>
-  <div>MyCounterPinia</div>
+  <div>MyCounterPiniaLocalStorage</div>
   <div>Count: {{ store.count }}</div>
   <div>Double Count: {{ store.doubleCount }}</div>
   <button @click="store.increment">+1</button>
