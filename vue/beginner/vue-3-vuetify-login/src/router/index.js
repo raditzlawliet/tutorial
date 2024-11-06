@@ -28,6 +28,7 @@ router.beforeEach((to, from, next) => {
   const userStore = useUserStore()
 
   if (to.name !== 'login' && !userStore.token) next({ name: 'login' })
+  else if (to.name == 'login' && userStore.token) next({ name: 'home' })
   else next()
 })
 
