@@ -40,6 +40,12 @@ export const useUserStore = defineStore('user', () => {
 
     // if success, store token, otherwise throw err
     storeToken(response.data.data)
+
+    // call API account/my
+    const responseMy = await api.get('/account/my')
+
+    // if success, store user, otherwise throw err
+    storeUser(responseMy.data.data)
   }
 
   const logout = () => {
