@@ -1,6 +1,6 @@
 <template>
   <v-responsive>
-    <v-app id="app" class="bg-blue">
+    <v-app id="app">
       <v-main id="main">
         <RouterView />
       </v-main>
