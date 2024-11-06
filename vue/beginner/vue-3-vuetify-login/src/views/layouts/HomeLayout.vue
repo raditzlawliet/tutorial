@@ -48,12 +48,15 @@ import { ref } from 'vue'
 import logo from '@/assets/logo-digi.png'
 import { mdiHome, mdiLogout } from '@mdi/js'
 import { RouterView, useRouter } from 'vue-router'
+import { useUserStore } from '@/stores/user.js'
 
+const userStore = useUserStore()
 const router = useRouter()
 
 const drawer = ref(null)
 
 function logout() {
+  userStore.logout()
   router.push({ name: 'login' })
 }
 
