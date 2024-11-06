@@ -42,7 +42,7 @@
     },
     {
       "file": "src/router/index.js",
-      "description": "### Register to route, so we can access from /demo\r\n- See the Component, it means, /demo will show DemoView",
+      "description": "### Register to route, so we can access from /demo\r\n- See the Component, it means, /demo will show DemoView\r\n\r\n>> ./.tours/vscode-open-commit.sh 164e2e2208dc52cd58f71bada7d2892c3fac1648",
       "line": 21
     }
   ],

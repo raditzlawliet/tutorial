@@ -18,7 +18,7 @@
           "character": 1
         }
       },
-      "description": "## Everything start from here"
+      "description": "## Everything start from here\r\n\r\n>> ./.tours/vscode-open-commit.sh 7cbeae4b21b4ad9263e3241a5b65e82d5fc519e6"
     }
   ],
   "ref": "7cbeae4b21b4ad9263e3241a5b65e82d5fc519e6"

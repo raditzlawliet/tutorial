@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5. Bonus, TODO List with Add Item",
+  "steps": [
+    {
+      "file": "src/components/Demo/MyTodoList.vue",
+      "description": "### Let add some form. Add view for the form, so we can add the list.\r\n- 1 text input and Submit button",
+      "line": 21
+    },
+    {
+      "file": "src/components/Demo/MyTodoList.vue",
+      "description": "### Logic\r\n- counterId for counter id item\r\n- todoText for binding form input\r\n- submit for function when submit button clicked\r\n\r\n>> ./.tours/vscode-open-commit.sh 4e8b83c5d627d45a57e7a5f32ccd10b3ba90079f",
+      "line": 11
+    }
+  ],
+  "ref": "4e8b83c5d627d45a57e7a5f32ccd10b3ba90079f"
+}

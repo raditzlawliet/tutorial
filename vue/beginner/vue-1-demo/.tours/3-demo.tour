@@ -172,7 +172,7 @@
     },
     {
       "file": "src/views/DemoView.vue",
-      "description": "### See the Pinia result!",
+      "description": "### See the Pinia result!\r\n\r\n>> ./.tours/vscode-open-commit.sh fd376e3d040d0cdf9fa1b21ccdc9c43beac7db53",
       "line": 51
     }
   ],

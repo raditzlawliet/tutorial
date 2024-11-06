@@ -32,7 +32,7 @@
     },
     {
       "file": "src/views/DemoView.vue",
-      "description": "### See the different!\r\n- Don't forget to refresh after click",
+      "description": "### See the different!\r\n- Don't forget to refresh after click\r\n\r\n>> ./.tours/vscode-open-commit.sh 36fee9dcfae9d36aa8e44529b14e6b51ed46f9a1",
       "line": 56
     }
   ],
