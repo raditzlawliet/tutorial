@@ -60,7 +60,7 @@
           "character": 1
         }
       },
-      "description": "### Cleanup routes\r\n- (Optional) If you remove the AboutView, you also need to remove route to AboutView (or iit will throw error)"
+      "description": "### Cleanup routes\r\n- (Optional) If you remove the AboutView, you also need to remove route to AboutView (or iit will throw error)\r\n\r\n>> ./.tours/vscode-open-commit.sh fae2858cbe2c3c1c4fe226f6793ace1ab961ae60"
     }
   ],
   "ref": "fae2858cbe2c3c1c4fe226f6793ace1ab961ae60"

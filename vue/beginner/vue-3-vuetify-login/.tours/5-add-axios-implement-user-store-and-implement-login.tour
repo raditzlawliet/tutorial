@@ -135,6 +135,20 @@
       "description": "### logout(), clear all stored token and stored user\r\n"
     },
     {
+      "file": "src/plugins/api.js",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 1
+        },
+        "end": {
+          "line": 21,
+          "character": 2
+        }
+      },
+      "description": "### api.js: addinterceptor request. Whenever token is exists, it will automatically added token to Header Authorization"
+    },
+    {
       "file": "src/views/LoginView.vue",
       "selection": {
         "start": {
@@ -221,7 +235,7 @@
     },
     {
       "file": "src/views/LoginView.vue",
-      "description": "### Done\r\n- now you can try.\r\n- Login Submit will call API auth/login\r\n- Success condition, it will store token and continue to call account/my and store the user information. Finally it will navigate to Home\r\n- Failed condition, it will show error message",
+      "description": "### Done\r\n- now you can try.\r\n- Login Submit will call API auth/login\r\n- Success condition, it will store token and continue to call account/my and store the user information. Finally it will navigate to Home\r\n- Failed condition, it will show error message \r\n\r\n>> ./.tours/vscode-open-commit.sh 43cfb33cdf2060ac01303b68307d622a18799852",
       "line": 103
     }
   ],

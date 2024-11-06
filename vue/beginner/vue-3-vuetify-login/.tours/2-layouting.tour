@@ -65,7 +65,7 @@
           "character": 15
         }
       },
-      "description": "### Implement meta.layout in App.vue\r\n- Update your App.vue, add <component> and :is\r\n- it will render a <component> based on $route.meta.layout\r\n- e.g., in \"home\", <component> will replaced with <HomeLayout>\r\n\r\n- Then, try to see the result in \"/\" and \"/login\""
+      "description": "### Implement meta.layout in App.vue\r\n- Update your App.vue, add <component> and :is\r\n- it will render a <component> based on $route.meta.layout\r\n- e.g., in \"home\", <component> will replaced with <HomeLayout>\r\n\r\n- Then, try to see the result in \"/\" and \"/login\" \r\n\r\n>> ./.tours/vscode-open-commit.sh cfb8713d45926b105b745f513df3ceebd4868b2e"
     }
   ],
   "ref": "cfb8713d45926b105b745f513df3ceebd4868b2e"

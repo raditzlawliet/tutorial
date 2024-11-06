@@ -90,7 +90,7 @@
           "character": 2
         }
       },
-      "description": "### Example when logout button clicked, it will run function logout() and navigate to \"login\""
+      "description": "### Example when logout button clicked, it will run function logout() and navigate to \"login\" \r\n\r\n>> ./.tours/vscode-open-commit.sh 698b6877352c420cdfe40253a65a1d85204091d8"
     }
   ],
   "ref": "698b6877352c420cdfe40253a65a1d85204091d8"

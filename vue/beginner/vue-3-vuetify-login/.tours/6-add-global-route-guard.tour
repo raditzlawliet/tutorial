@@ -1,0 +1,40 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "6. Add Global Route Guard",
+  "steps": [
+    {
+      "file": "src/router/index.js",
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 1
+        },
+        "end": {
+          "line": 6,
+          "character": 48
+        }
+      },
+      "description": "### Import user stores"
+    },
+    {
+      "file": "src/router/index.js",
+      "selection": {
+        "start": {
+          "line": 26,
+          "character": 1
+        },
+        "end": {
+          "line": 33,
+          "character": 3
+        }
+      },
+      "description": "### Add Global route guard to check the token.\r\n- if unauthorized user open except login, it will navigate to login.\r\n- if authorized user open login, it will navigate to home\r\n"
+    },
+    {
+      "file": "src/router/index.js",
+      "description": "### Done! \r\n\r\n>> ./.tours/vscode-open-commit.sh 01ff7f753c16e395ca2460aad4969d50db8cd939",
+      "line": 36
+    }
+  ],
+  "ref": "01ff7f753c16e395ca2460aad4969d50db8cd939"
+}

@@ -98,7 +98,7 @@
     },
     {
       "file": "src/views/LoginView.vue",
-      "description": "### When submit execute, it will navigate to \"home\" route",
+      "description": "### When submit execute, it will navigate to \"home\" route \r\n\r\n>> ./.tours/vscode-open-commit.sh 7cb7e2940acafc576abe8f90db948eab1451b828",
       "line": 14
     }
   ],
