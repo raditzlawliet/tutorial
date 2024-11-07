@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
@@ -39,6 +40,11 @@ func main() {
 	authClient := auth.NewAuthClient(conn)
 
 	r := gin.Default()
+	// import "github.com/gin-contrib/cors"
+	config := cors.DefaultConfig()
+	config.AddAllowHeaders("Authorization") // Allow Header: Authorization
+	config.AllowAllOrigins = true
+	r.Use(cors.New(config))
 
 	// grouping route with /auth
 	authHandler := handler.NewAuth(authClient, db)
