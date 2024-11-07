@@ -28,7 +28,7 @@
           "character": 100
         }
       },
-      "description": "## Prepare Connection Env"
+      "description": "## Prepare Connection Env\r\n- Copy .env.example to .env and configure the connection.\r\n- Avoid commit .env to your repository or just give .env.example (except for task or needed)"
     },
     {
       "file": "main.go",

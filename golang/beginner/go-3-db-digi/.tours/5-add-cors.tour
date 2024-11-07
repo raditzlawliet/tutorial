@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "5. Add CORS",
+  "steps": [
+    {
+      "file": "main.go",
+      "selection": {
+        "start": {
+          "line": 34,
+          "character": 1
+        },
+        "end": {
+          "line": 40,
+          "character": 1
+        }
+      },
+      "description": "### (Bonus) Add CORS to allow all website from all domain and port to access\r\n- THis for development and learning purpose. In real-case, consider to only allow more spesific"
+    }
+  ],
+  "ref": "63c02f14b5501c6c037e3e45b8a970333544a427"
+}
