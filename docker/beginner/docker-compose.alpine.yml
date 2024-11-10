@@ -1,11 +1,10 @@
-version: '3.9'
 # compose name
-name: docker-compose-learning
+name: docker-compose-learning-alpine
 
 # tell compose to create this all services
 services:
-  # app service section
-  app:
+  # backend app service section
+  backend:
     container_name: golang_container
     # set container system environment
     environment:
@@ -35,8 +34,8 @@ services:
     networks:
       - learning
 
-  # web service section
-  web:
+  # frontend web service section
+  frontend:
     container_name: vue_container
     # build with given Dockerfile
     build:
@@ -71,7 +70,7 @@ services:
       - '5432:5432'
     # map persistent data stores
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - learning_pg_data:/var/lib/postgresql/data
     networks:
       - learning
     # indicator container is healty
@@ -83,7 +82,7 @@ services:
 
 # Volume for persistent postgres db data
 volumes:
-  pg_data:
+  learning_pg_data:
 
 # Networks to be created to facilitate communication between containers
 networks:

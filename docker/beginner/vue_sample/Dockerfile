@@ -26,7 +26,7 @@ RUN npm run build
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the build application to the Nginx web directory
-COPY dist /usr/share/nginx/html
+RUN cp -r dist /usr/share/nginx/html
 
 # Copy the nginx configuration file
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
