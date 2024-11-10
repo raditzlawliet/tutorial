@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "10. Implement favorite page and add to bottom navbar",
+  "title": "a10. Implement favorite page and add to bottom navbar",
   "steps": [
     {
       "file": "../../../lib/main.dart",
