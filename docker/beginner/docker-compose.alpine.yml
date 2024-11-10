@@ -41,7 +41,7 @@ services:
     # build with given Dockerfile
     build:
       context: ./vue_sample/
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.alpine
     # environment file
     env_file:
       - .env

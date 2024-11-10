@@ -36,3 +36,7 @@ EXPOSE 80
 
 # Start Nginx to serve the application
 CMD ["nginx", "-g", "daemon off;"]
+
+# Example how to ...
+### docker build -t my-vue-sample .
+### docker run -d -p 80:80 --name my-vue-sample-container my-vue-sample

@@ -143,7 +143,7 @@ docker run -d -p 80:80 --name vue_sample vue_sample
 
 ## Other Things
 
-Interesting ENTRYPOINT vs CMD: https://spacelift.io/blog/docker-entrypoint-vs-cmd
+Syntax ENTRYPOINT vs CMD: https://spacelift.io/blog/docker-entrypoint-vs-cmd
 
 - ENTRYPOINT is the process that’s executed inside the container.
 - CMD is the default set of arguments that are supplied to the ENTRYPOINT process.

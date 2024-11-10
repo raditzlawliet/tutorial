@@ -37,3 +37,7 @@ EXPOSE 8080
 USER nonroot:nonroot
 
 CMD ["/docker-go-ping"]
+
+# Example how to ...
+### docker build -t my-go-dockerfile:debian -f Dockerfile.alpine .
+### docker run -d -p 8085:8080 --name my-go-container my-go-dockerfile:debian

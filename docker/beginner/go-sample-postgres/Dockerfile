@@ -18,6 +18,6 @@ EXPOSE 8080
 # Run
 CMD [ "/docker-go-ping" ]
 
+# Example how to ...
 ### docker build -t my-go-dockerfile .
-
-### docker run -d -p 8080:8080 --name my-go-container my-go-dockerfile
+### docker run -d -p 8085:8080 --name my-go-container my-go-dockerfile

@@ -15,7 +15,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	e.GET("/", func(c echo.Context) error {
-		return c.HTML(http.StatusOK, "Hello, Docker! <3")
+		return c.HTML(http.StatusOK, "Hello, Golang! <3")
 	})
 
 	httpPort := os.Getenv("PORT")
