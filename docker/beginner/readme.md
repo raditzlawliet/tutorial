@@ -82,18 +82,37 @@ docker run -d -p 8080:8080 --name my-docker-go-ping-container docker-go-ping
 docker volume create postgres-data
 ```
 
-### Run postgres with existing volume
+### Run postgres with volume
 
 ```sh
+# https://github.com/docker-library/docs/blob/master/postgres/README.md
 docker run -d \
-    --name postgres \
-    -e POSTGRES_USER=postgres \
-    -e POSTGRES_PASSWORD=password \
-    -e PGDATA=/var/lib/postgresql/data/pgdata \
-    -v postgres-data:/var/lib/postgresql/data/pgdata \
-   --restart unless-stopped \
-    -p 5432:5432 \
+    --name postgres2 \
+    --env POSTGRES_USER=postgres \
+    --env POSTGRES_PASSWORD=password \
+    --env PGDATA=/var/lib/postgresql/data/pgdata \
+    --volume postgres2-data:/var/lib/postgresql/data/pgdata \
+    --restart unless-stopped \
+    --publish 5432:5432 \
     postgres
+
+# If you're using git bash, add MSYS2_ENV_CONV_EXCL='*' MSYS2_ARG_CONV_EXCL='*' to avoid auto conversion from arguments and env
+# https://www.msys2.org/docs/filesystem-paths/#environment-variables
+MSYS2_ARG_CONV_EXCL='*' MSYS2_ENV_CONV_EXCL='*' docker run -d \
+    --name postgres \
+    --env POSTGRES_USER=postgres \
+    --env POSTGRES_PASSWORD=password \
+    --env PGDATA=/var/lib/postgresql/data/pgdata \
+    --volume postgres-data:/var/lib/postgresql/data/pgdata \
+    --restart unless-stopped \
+    --publish 5432:5432 \
+    postgres
+```
+
+### Run mySQL
+
+```sh
+docker run --name some-mysql -v some-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql
 ```
 
 ## Docker Compose
@@ -127,7 +146,7 @@ docker compose down
 docker compose -f docker-compose.yml down -d --build
 ```
 
-## Vue
+## Vue with Docker
 
 ```sh
 npx create-vue vue_sample
