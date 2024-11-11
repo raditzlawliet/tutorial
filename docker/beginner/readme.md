@@ -87,11 +87,10 @@ docker volume create postgres-data
 ```sh
 # https://github.com/docker-library/docs/blob/master/postgres/README.md
 docker run -d \
-    --name postgres2 \
+    --name postgres \
     --env POSTGRES_USER=postgres \
     --env POSTGRES_PASSWORD=password \
-    --env PGDATA=/var/lib/postgresql/data/pgdata \
-    --volume postgres2-data:/var/lib/postgresql/data/pgdata \
+    --volume postgres-data:/var/lib/postgresql/data \
     --restart unless-stopped \
     --publish 5432:5432 \
     postgres
@@ -102,8 +101,7 @@ MSYS2_ARG_CONV_EXCL='*' MSYS2_ENV_CONV_EXCL='*' docker run -d \
     --name postgres \
     --env POSTGRES_USER=postgres \
     --env POSTGRES_PASSWORD=password \
-    --env PGDATA=/var/lib/postgresql/data/pgdata \
-    --volume postgres-data:/var/lib/postgresql/data/pgdata \
+    --volume postgres-data:/var/lib/postgresql/data \
     --restart unless-stopped \
     --publish 5432:5432 \
     postgres
