@@ -48,12 +48,12 @@
       "file": "../../../lib/main.dart",
       "selection": {
         "start": {
-          "line": 7,
+          "line": 60,
           "character": 1
         },
         "end": {
-          "line": 7,
-          "character": 75
+          "line": 67,
+          "character": 1
         }
       },
       "description": "## Implement selectedIndex\r\n\r\n1. add onDestinationSelected with `setState((){})`, it will call update state whenever user tap the nav bar.\r\n2. `selectedIndex = index` will update current index with selected index from user action. \r\n3. lastly add `NavigationBar.selectedIndex` for nav bar to know which is current index.\r\n\r\n>> ./script/vscode-open-commit.sh c32631ee1627711b76d9486d7427e53367dac4e3"
