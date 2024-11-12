@@ -3,20 +3,6 @@
   "title": "5. Implement App and Navigate Them",
   "steps": [
     {
-      "file": "lib/main.dart",
-      "selection": {
-        "start": {
-          "line": 1,
-          "character": 1
-        },
-        "end": {
-          "line": 7,
-          "character": 1
-        }
-      },
-      "description": "### main.dart\r\n\r\nReplace default `main.dart`.\r\n\r\nWe are injecting a single instance of the AuthRepository and UserRepository into the App widget (which we will get to next)."
-    },
-    {
       "file": "lib/app.dart",
       "selection": {
         "start": {
@@ -29,6 +15,20 @@
         }
       },
       "description": "### Create App\r\n\r\n`app.dart` will contain the root **App** widget for the entire application.\r\n\r\n`app.dart` is split into two parts **App** and **AppScreen**. \r\n\r\n**App** is responsible for creating/providing the **AuthCubit** which will be consumed by the **AppScreen**. This decoupling will enable us to easily test both the App and **AppScreen** widgets later on.\r\n\r\n"
+    },
+    {
+      "file": "lib/app.dart",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 1
+        },
+        "end": {
+          "line": 48,
+          "character": 1
+        }
+      },
+      "description": "### App StatefulWidget\r\n- We will add Create AuthRepository and UserRepository on initState()"
     },
     {
       "file": "lib/app.dart",
@@ -56,7 +56,7 @@
           "character": 1
         }
       },
-      "description": "### NavigatorState\r\n\r\n**AppScreen** is a **StatefulWidget** because it maintains a **GlobalKey** which is used to access the **NavigatorState**. By default, **AppScreen** will render the **SplashScreen** (which we will see later) and it uses **BlocListener** to navigate to different pages based on changes in the **AuthState**.\r\n\r\n"
+      "description": "### NavigatorState\r\n\r\n**AppScreen** is a **StatefulWidget** because it maintains a **GlobalKey** which is used to access the **NavigatorState**. By default, **AppScreen** will render the **SplashScreen** (which we will see later) and it uses **BlocListener** to navigate to different pages based on changes in the **AuthState**.\r\n\r\n- We will use NavigatorState for navigate between pages."
     },
     {
       "file": "lib/app.dart",
@@ -76,15 +76,29 @@
       "file": "lib/app.dart",
       "selection": {
         "start": {
-          "line": 7,
+          "line": 69,
+          "character": 1
+        },
+        "end": {
+          "line": 89,
+          "character": 1
+        }
+      },
+      "description": "### BlocListener to listen auth and navigate\r\n\r\nThis section will listen to `AuthState.state.status` and navigate to login or home screen.\r\n- we may use `pushNamedAndRemoveUntil` with named router or\r\n- use `pushAndRemoveUntil` with static route() we will create in each Screen later.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+    },
+    {
+      "file": "lib/main.dart",
+      "selection": {
+        "start": {
+          "line": 1,
           "character": 1
         },
         "end": {
           "line": 7,
-          "character": 75
+          "character": 1
         }
       },
-      "description": "### BlocListener to listen auth and navigate\r\n\r\nThis section will listen to `AuthState.state.status` and navigate to login or home screen.\r\n- we may use `pushNamedAndRemoveUntil` with named router or\r\n- use `pushAndRemoveUntil` with static route() we will create in each Screen later.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+      "description": "### Update main.dart\r\n\r\nReplace default `main.dart`.\r\n\r\nWe are injecting a single instance of the AuthRepository and UserRepository into the App widget (which we will get to next)."
     },
     {
       "file": "lib/splash_screen.dart",

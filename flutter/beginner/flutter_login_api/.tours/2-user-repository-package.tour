@@ -32,7 +32,7 @@
           "character": 1
         }
       },
-      "description": "### Create User Model\r\n\r\n`User` Class will hold user identity based on auth-me request. It also need `.fromJson()` to convert JSON to User model.\r\n\r\n```json\r\n// https://dummyjson.com/docs/auth#auth-me\r\n{\r\n  \"id\": 1,\r\n  \"username\": \"emilys\",\r\n  \"firstName\": \"Emily\",\r\n  \"lastName\": \"Johnson\",\r\n  ... // other user fields\r\n}\r\n```\r\n"
+      "description": "### Create User Model\r\n\r\n- file: `user_repository/lib/src/modoels/user.dart`\r\n\r\n`User` Class will hold user identity based on auth-me request. It also need `.fromJson()` to convert JSON to User model.\r\n\r\n```json\r\n// https://dummyjson.com/docs/auth#auth-me\r\n{\r\n  \"id\": 1,\r\n  \"username\": \"emilys\",\r\n  \"firstName\": \"Emily\",\r\n  \"lastName\": \"Johnson\",\r\n  ... // other user fields\r\n}\r\n```\r\n"
     },
     {
       "file": "packages/user_repository/lib/src/models/models.dart",
@@ -46,7 +46,7 @@
           "character": 1
         }
       },
-      "description": "### Barrel User Model"
+      "description": "### Barrel User Model\r\n\r\n- file: `user_repository/lib/src/models/models.dart`\r\n"
     },
     {
       "file": "packages/user_repository/lib/src/user_repository.dart",
@@ -60,7 +60,7 @@
           "character": 1
         }
       },
-      "description": "### Create UserRepository\r\n\r\nSimilar with AuthRepository, this will responsibility user domain.\r\n- `getUser()` will do call get current user based on `token` provided from `AuthRepository.AuthToken.token`."
+      "description": "### Create UserRepository\r\n- file: `user_repository/lib/src/user_repository.dart`\r\n\r\nSimilar with AuthRepository, this will responsibility user domain.\r\n- `getUser()` will do call get current user based on `token` provided from `AuthRepository.AuthToken.token`."
     },
     {
       "file": "packages/user_repository/lib/src/user_repository.dart",
@@ -102,7 +102,7 @@
           "character": 1
         }
       },
-      "description": "### Barrel User Repository\r\n\r\n- create user_repository.dart\r\n- export files in user_repository that can be exposed.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
+      "description": "### Barrel User Repository\r\n\r\n- file: `user_repository/lib/src/user_repository.dart`\r\n\r\n- create user_repository.dart\r\n- export files in user_repository that can be exposed.\r\n\r\n>> ./script/vscode-open-commit.sh 82ee9019051080edecd65f435f945760708ab7df"
     }
   ],
   "ref": "82ee9019051080edecd65f435f945760708ab7df"

@@ -24,7 +24,7 @@
       "file": "packages/auth_repository/lib/src/auth_token.dart",
       "selection": {
         "start": {
-          "line": 1,
+          "line": 3,
           "character": 1
         },
         "end": {
@@ -32,7 +32,7 @@
           "character": 1
         }
       },
-      "description": "### Create AuthToken\r\n\r\nAuthToken is class for valid login response. It also have `.fromJSON` to convert JSON map to AuthToken Class.\r\n\r\nJSON from response should be:\r\n```json\r\n{\r\n    \"token\": \"xxxxx.yyyyy.zzzzz\",\r\n    ...\r\n}\r\n```\r\n",
+      "description": "### Create AuthToken\r\n\r\n- Create `AuthToken` in `packages/auth_repository/lib/src/auth_token.dart`\r\n\r\nAuthToken is class for valid login response. It also have `.fromJSON` to convert JSON map to AuthToken Class.\r\n\r\nJSON from response should be:\r\n```json\r\n{\r\n    \"token\": \"xxxxx.yyyyy.zzzzz\",\r\n    ...\r\n}\r\n```\r\n",
       "line": null
     },
     {
@@ -47,7 +47,7 @@
           "character": 1
         }
       },
-      "description": "### Create AuthRepository\r\n\r\nAuthRepository will save and handle auth domain."
+      "description": "### Create AuthRepository\r\n\r\n- Create `AuthRepository` in `packages/auth_repository/lib/src/auth_repository.dart`\r\n\r\nAuthRepository will save and handle auth domain."
     },
     {
       "file": "packages/auth_repository/lib/src/auth_repository.dart",

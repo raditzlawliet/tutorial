@@ -4,7 +4,7 @@
   "steps": [
     {
       "directory": "lib/login/models",
-      "description": "### Login Model\r\n\r\nWe are using `package:formz` to create reusable and standard models for the username and password.",
+      "description": "### Login Model\r\n\r\n- file: `lib/login/models/`\r\n\r\nWe are using `package:formz` to create reusable and standard models for the username and password.",
       "selection": {
         "start": {
           "line": 3,
@@ -28,7 +28,7 @@
           "character": 1
         }
       },
-      "description": "### Username Model\r\n\r\nFor simplicity, we are just validating the username to ensure that it is not empty but in practice you can enforce special character usage, length, etc…"
+      "description": "### Username Model\r\n\r\n- file: `lib/login/models/username.dart`\r\n\r\nFor simplicity, we are just validating the username to ensure that it is not empty but in practice you can enforce special character usage, length, etc…"
     },
     {
       "file": "lib/login/models/password.dart",
@@ -42,21 +42,21 @@
           "character": 1
         }
       },
-      "description": "### Password Model\r\n\r\nFor simplicity, we are just validating the password to ensure that it is not empty but in practice you can enforce special character usage, length, etc…"
+      "description": "### Password Model\r\n\r\n- file: `lib/login/models/password.dart`\r\n\r\nFor simplicity, we are just validating the password to ensure that it is not empty but in practice you can enforce special character usage, length, etc…"
     },
     {
       "file": "lib/login/models/models.dart",
       "selection": {
         "start": {
-          "line": 3,
-          "character": 31
+          "line": 1,
+          "character": 1
         },
         "end": {
           "line": 3,
           "character": 42
         }
       },
-      "description": "### Model Barrel\r\n\r\nJust like before, there is a `models.dart` barrel to make it easy to import the Username and Password models with a single import.\r\n\r\n"
+      "description": "### Model Barrel\r\n\r\n- file: `lib/login/models/models.dart`\r\n\r\nJust like before, there is a `models.dart` barrel to make it easy to import the Username and Password models with a single import.\r\n\r\n"
     },
     {
       "file": "lib/login/cubit/login_state.dart",
@@ -154,7 +154,7 @@
           "character": 1
         }
       },
-      "description": "### Create LoginForm\r\n\r\nThe LoginForm handles responds to state changes using BlocBuilder and BlocListener.\r\n\r\n"
+      "description": "### Create LoginForm\r\n- file: `lib/login/screen/login_form.dart`\r\n\r\nThe LoginForm handles responds to state changes using BlocBuilder and BlocListener.\r\n\r\n"
     },
     {
       "file": "lib/login/screen/login_form.dart",

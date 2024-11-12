@@ -14,7 +14,7 @@
           "character": 1
         }
       },
-      "description": "### Create HomeScreen\r\n\r\nThis will display home screen"
+      "description": "### Create HomeScreen in `lib/home/screen/home_screen.dart`\r\n\r\nThis will display home screen"
     },
     {
       "file": "lib/home/screen/home_screen.dart",
