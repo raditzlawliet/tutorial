@@ -45,6 +45,11 @@
       "description": "### Add Increment and Decrement Floating Button\r\n\r\nAdd 2 `FloatingActionButton` to call increment and decrement counter.\r\n\r\nWe can call `CounterCubit` function using `context.read<CounterCubit>()`. and `CounterCubit.increment()` will emit or update the state or counter.\r\n\r\nTo make `CounterCubit` valid, This parent widget must have `BlocProvider()` and provide `CounterCubit`.\r\n"
     },
     {
+      "file": "../flutter-counter-cubit/lib/counter/view/view.dart",
+      "description": "### Update Counter View Barrel\r\n\r\nLastly, barrel all views into view.dart.\r\n\r\n**And congrats! Counter App with Cubit now done.**\r\n\r\n>> ./script/vscode-open-commit.sh 00f3e86879c5796f667e649aeb30eb5f0fb8cf66",
+      "line": 2
+    },
+    {
       "file": "../flutter-counter-cubit/lib/counter/view/counter_page.dart",
       "selection": {
         "start": {
@@ -57,11 +62,6 @@
         }
       },
       "description": "### Implement `CounterView` to `CounterPage` with `BlocProvider`\r\n\r\nAs mention before, this make `CounterPage` is parent for `CounterView`, we need `BlocProvider` to provide CounterCubit context to all child inside them.\r\nhttps://bloclibrary.dev/flutter-bloc-concepts/#blocprovider\r\n\r\nFor multiple provider, you can use `*MultiBlocProvider*`"
-    },
-    {
-      "file": "../flutter-counter-cubit/lib/counter/view/view.dart",
-      "description": "### Update Counter View Barrel\r\n\r\nLastly, barrel all views into view.dart.\r\n\r\n**And congrats! Counter App with Cubit now done.**\r\n\r\n>> ./script/vscode-open-commit.sh 00f3e86879c5796f667e649aeb30eb5f0fb8cf66",
-      "line": 2
     }
   ],
   "ref": "00f3e86879c5796f667e649aeb30eb5f0fb8cf66"

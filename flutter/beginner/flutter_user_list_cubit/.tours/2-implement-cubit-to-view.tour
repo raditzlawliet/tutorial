@@ -33,7 +33,7 @@
           "character": 7
         }
       },
-      "description": "### Implement `BlocProvider` of `UserListCubit` on `UserListPage` to provide context for `UserListView`\r\n"
+      "description": "### Extract current Scaffold to `UserListView` and Implement `BlocProvider` of `UserListCubit` on `UserListPage` for providing context to `UserListView`\r\n"
     },
     {
       "file": "lib/user_list/view/user_list_view.dart",
@@ -131,7 +131,7 @@
           "character": 1
         }
       },
-      "description": "## Implement `CounterView` to `CounterPage` with `BlocProvider`\r\n\r\n>> ./script/vscode-open-commit.sh 20f14efd58ed977b81e4fcb93f307f6674d3f375"
+      "description": "## (Already Pointed) Implement `CounterView` to `CounterPage` with `BlocProvider`\r\n\r\n>> ./script/vscode-open-commit.sh 20f14efd58ed977b81e4fcb93f307f6674d3f375"
     }
   ],
   "ref": "20f14efd58ed977b81e4fcb93f307f6674d3f375"
