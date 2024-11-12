@@ -53,6 +53,20 @@
       "file": "lib/user_list/view/user_list_view.dart",
       "selection": {
         "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 11,
+          "character": 1
+        }
+      },
+      "description": "### Wrap `UserListView` with `BlocBuilder`, since we will rebuild all widgets inside `UserListView` everytime state changes."
+    },
+    {
+      "file": "lib/user_list/view/user_list_view.dart",
+      "selection": {
+        "start": {
           "line": 48,
           "character": 1
         },
@@ -61,7 +75,7 @@
           "character": 1
         }
       },
-      "description": "### Implement Initial State View"
+      "description": "### Implement Initial State View\r\n- refresh button to call fetchUser()"
     },
     {
       "file": "lib/user_list/view/user_list_view.dart",
@@ -75,7 +89,7 @@
           "character": 1
         }
       },
-      "description": "### Implement Loading State View"
+      "description": "### Implement Loading State View\r\n- Just a circular loading widget"
     },
     {
       "file": "lib/user_list/view/user_list_view.dart",
@@ -89,7 +103,7 @@
           "character": 1
         }
       },
-      "description": "### Implement Success State View"
+      "description": "### Implement Success State View\r\n- We will create ListView with users data using builder.\r\n- Similar with loop, `itemBuilder` called each item with param (context, index).\r\n- Don't forget to put `itemCount`. since it will loop depend on itemCount"
     },
     {
       "file": "lib/user_list/view/user_list_view.dart",
@@ -117,7 +131,7 @@
           "character": 1
         }
       },
-      "description": "### Implement Error State View"
+      "description": "### Implement Error State View\r\n- Show an error message and button to fetchUser() again"
     },
     {
       "file": "lib/main.dart",

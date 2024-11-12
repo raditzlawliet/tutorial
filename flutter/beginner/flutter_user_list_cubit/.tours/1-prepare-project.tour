@@ -14,7 +14,7 @@
           "character": 1
         }
       },
-      "description": "### Add Dependency\r\n\r\n- We will use cubit, so add `bloc` and `flutter_bloc` in our depedencies. See more on: https://bloclibrary.dev/getting-started/\r\n- We also use `equatable`. See more on: https://pub.dev/packages/equatable\r\n- We also use `dio` for http networking or fetching data via http. See more on: https://pub.dev/packages/dio\r\n"
+      "description": "### Add Dependency\r\n\r\n- We will use cubit, so add `bloc` and `flutter_bloc` in our depedencies. See more on: https://bloclibrary.dev/getting-started/\r\n- We also use `equatable`. See more on: https://pub.dev/packages/equatable\r\n- We also use `dio` for http networking or fetching data via http. See more on: https://pub.dev/packages/dio\r\n\r\n```sh\r\nflutter pub add bloc flutter_bloc equatable dio\r\n```"
     },
     {
       "file": "lib/user_list/model/user.dart",
@@ -28,7 +28,7 @@
           "character": 1
         }
       },
-      "description": "### Create User List - User Model"
+      "description": "### Create User List - User Model\r\n- User has `name` and `email` property.\r\n- `factory User.fromJson(Map<String, dynamic> json)` is function to create a User from Map<string, dynamic> (which is json from `dio` response).\r\n- You can put complex logic in Factory Constructor before initialize an object. "
     },
     {
       "file": "lib/user_list/cubit/user_list_state.dart",
@@ -42,7 +42,7 @@
           "character": 1
         }
       },
-      "description": "### Create User List - Cubit State\r\n\r\n"
+      "description": "### Create User List - Cubit State\r\n\r\n- Create 4 State for our user list page: initial, loading, failed and success.\r\n- for success will hold users data\r\n- for failed, will hold error message"
     },
     {
       "file": "lib/user_list/cubit/user_list_cubit.dart",
@@ -56,7 +56,7 @@
           "character": 1
         }
       },
-      "description": "### Create User List - Cubit"
+      "description": "### Create User List - Cubit\r\n\r\n- fetchUser() for fetching the user via API\r\n- using `UserListState` as Cubit State we created previously."
     },
     {
       "file": "lib/user_list/cubit/user_list_cubit.dart",
@@ -70,7 +70,7 @@
           "character": 1
         }
       },
-      "description": "### Implement `fetchUser()` in `UserListCubit`"
+      "description": "### Implement `fetchUser()` in `UserListCubit`\r\n- to fetch list user via API"
     },
     {
       "file": "lib/user_list/cubit/user_list_cubit.dart",
@@ -112,7 +112,7 @@
           "character": 1
         }
       },
-      "description": "### Create `UserListPage` Placeholder"
+      "description": "### Create `UserListPage` Placeholder\r\n- a white screen with single button"
     },
     {
       "file": "lib/user_list/user_list.dart",
@@ -140,7 +140,7 @@
           "character": 1
         }
       },
-      "description": "### Create App\r\n\r\n"
+      "description": "### Create App\r\n\r\n- Set home to `UserListPage` widget"
     },
     {
       "file": "lib/main.dart",

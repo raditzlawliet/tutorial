@@ -4,7 +4,7 @@
   "steps": [
     {
       "file": "lib/main.dart",
-      "description": "## Update Counter View Barrel",
+      "description": "## Update Import with Barrel",
       "line": 2
     },
     {
@@ -33,7 +33,7 @@
           "character": 1
         }
       },
-      "description": "### Create `UserDetailPage` for viewing user detail on tap "
+      "description": "### Create `UserDetailPage` for viewing user detail on tap \r\n- new file `UserDetailPage` will show user detail\r\n- showing an avatar, user email and user name\r\n- has paramter `User` in constructor that can be pass"
     },
     {
       "file": "lib/user_list/view/user_list_view.dart",
@@ -47,11 +47,11 @@
           "character": 1
         }
       },
-      "description": "### Implement `ListView.item` when `onTap()` do navigate to `UserDetailPage`"
+      "description": "### Implement `ListView.item` when `onTap()` do navigate to `UserDetailPage`\r\n- in tap ListView -> it will Navigate to UserDetailPage"
     },
     {
       "file": "lib/user_list/view/user_list_page.dart",
-      "description": "### Update import on main file of user_list_page.dart\r\n\r\n>> ./script/vscode-open-commit.sh 20f7de368a15e5e1e68602e6004ac312b693d428",
+      "description": "### Update import on main file of user_list_page.dart\r\n- Since we do identify `user_list_page.dart` and `user_list_view.dart` as single part `user_list_view.dart`\r\n- And we use `UserDetailPage` in `user_list_page.dart`\r\n- we need to add import `user_detail_page.dart` in `user_list_view.dart`\r\n\r\n>> ./script/vscode-open-commit.sh 20f7de368a15e5e1e68602e6004ac312b693d428",
       "line": 4
     }
   ],
